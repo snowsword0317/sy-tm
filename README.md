@@ -23,3 +23,4 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 remix来了
+snowsword第一次给remix显示冲突样式
