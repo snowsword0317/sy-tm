@@ -40,6 +40,34 @@
 
 <script>
 import recommended from "../components/classifyChild/recommended.vue";
+import world from "../components/classifyChild/world.vue";
+import tmWorld from "../components/classifyChild/tmWorld.vue";
+import wWear from "../components/classifyChild/wWear.vue";
+import wShoes from "../components/classifyChild/wShoes.vue";
+import mWear from "../components/classifyChild/mWear.vue";
+import mShoes from "../components/classifyChild/mShoes.vue";
+import underWear from "../components/classifyChild/underWear.vue";
+import moba from "../components/classifyChild/moba.vue";
+import phone from "../components/classifyChild/phone.vue";
+import digital from "../components/classifyChild/digital.vue";
+import houseEle from "../components/classifyChild/houseEle.vue";
+import makeup from "../components/classifyChild/makeup.vue";
+import bags from "../components/classifyChild/bags.vue";
+import motion from "../components/classifyChild/motion.vue";
+import outdoors from "../components/classifyChild/outdoors.vue";
+import homeDecoration from "../components/classifyChild/homeDecoration.vue";
+import homeTextiles from "../components/classifyChild/homeTextiles.vue";
+import homeStore from "../components/classifyChild/homeStore.vue";
+import flowerPet from "../components/classifyChild/flowerPet.vue";
+import accessories from "../components/classifyChild/accessories.vue";
+import food from "../components/classifyChild/food.vue";
+import fresh from "../components/classifyChild/fresh.vue";
+import motorCar from "../components/classifyChild/motorCar.vue";
+import medicine from "../components/classifyChild/medicine.vue";
+import books from "../components/classifyChild/books.vue";
+import correspond from "../components/classifyChild/correspond.vue";
+import washAndCare from "../components/classifyChild/washAndCare.vue";
+import musical from "../components/classifyChild/musical.vue";
 
 export default {
   data() {
@@ -143,7 +171,35 @@ export default {
     }
   },
   components: {
-    "recommended": recommended
+    "recommended": recommended,
+    "world": world,
+    "tmWorld": tmWorld,
+    "wWear": wWear,
+    "wShoes": wShoes,
+    "mWear": mWear,
+    "mShoes": mShoes,
+    "underWear": underWear,
+    "moba": moba,
+    "phone": phone,
+    "digital": digital,
+    "houseEle": houseEle,
+    "makeup": makeup,
+    "bags": bags,
+    "motion": motion,
+    "outdoors": outdoors,
+    "homeDecoration": homeDecoration,
+    "homeTextiles": homeTextiles,
+    "homeStore": homeStore,
+    "flowerPet": flowerPet,
+    "accessories": accessories,
+    "food": food,
+    "fresh": fresh,
+    "motorCar": motorCar,
+    "medicine": medicine,
+    "books": books,
+    "correspond": correspond,
+    "washAndCare": washAndCare,
+    "musical": musical,
   }
 };
 </script>
