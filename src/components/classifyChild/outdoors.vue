@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name:"wWear"
+    name:"outdoors"
 }
 </script>
 
