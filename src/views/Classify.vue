@@ -33,12 +33,14 @@
       <div class="classify-tab" @click="tab(29)" :class="{active:pageindex==29}">乐器</div>
     </div>
     <div class="classify-detail">
-      <component :is="tabname"></component>
+      <component :is="tabname" ></component>
     </div>
   </div>
 </template>
 
 <script>
+import recommended from "../components/classifyChild/recommended.vue";
+
 export default {
   data() {
     return {
@@ -51,52 +53,52 @@ export default {
       this.pageindex = index;
       switch (index) {
         case 1:
-          this.tabname = "recommended";//为您推荐
+          this.tabname = "recommended"; //为您推荐
           break;
         case 2:
-          this.tabname = "world";//国际大牌
+          this.tabname = "world"; //国际大牌
           break;
         case 3:
-          this.tabname = "tmWorld";//天猫国际
+          this.tabname = "tmWorld"; //天猫国际
           break;
         case 4:
-          this.tabname = "wWear";//女装
+          this.tabname = "wWear"; //女装
           break;
         case 5:
-          this.tabname = "wShoes";//女鞋
+          this.tabname = "wShoes"; //女鞋
           break;
         case 6:
-          this.tabname = "mWear";//男装
+          this.tabname = "mWear"; //男装
           break;
         case 7:
-          this.tabname = "mShoes";//男鞋
+          this.tabname = "mShoes"; //男鞋
           break;
         case 8:
-          this.tabname = "underWear";//内衣
+          this.tabname = "underWear"; //内衣
           break;
         case 9:
-          this.tabname = "moba";//母婴
+          this.tabname = "moba"; //母婴
           break;
         case 10:
-          this.tabname = "phone";//手机
+          this.tabname = "phone"; //手机
           break;
         case 11:
-          this.tabname = "digital";//数码
+          this.tabname = "digital"; //数码
           break;
         case 12:
-          this.tabname = "houseEle";//家电
+          this.tabname = "houseEle"; //家电
           break;
         case 13:
-          this.tabname = "makeup";//美妆
+          this.tabname = "makeup"; //美妆
           break;
         case 14:
-          this.tabname = "bags";//箱包
+          this.tabname = "bags"; //箱包
           break;
         case 15:
-          this.tabname = "motion";//运动
+          this.tabname = "motion"; //运动
           break;
         case 16:
-          this.tabname = "outdoors";//户外
+          this.tabname = "outdoors"; //户外
           break;
         case 17:
           this.tabname = "homeDecoration";
@@ -139,6 +141,9 @@ export default {
           break;
       }
     }
+  },
+  components: {
+    "recommended": recommended
   }
 };
 </script>
@@ -180,6 +185,9 @@ export default {
   display: inline-block;
   width: 78%;
   height: 93%;
+  border: 1px solid saddlebrown;
+  vertical-align: top;
+  overflow: auto;
 }
 
 .active {
