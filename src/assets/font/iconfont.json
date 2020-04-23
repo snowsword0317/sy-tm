@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2036621",
+      "name": "五角星空",
+      "font_class": "wujiaoxingkong",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "13475910",
+      "name": "五角星",
+      "font_class": "icon-",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
       "icon_id": "844627",
       "name": "箭头2-1",
       "font_class": "jiantou21",

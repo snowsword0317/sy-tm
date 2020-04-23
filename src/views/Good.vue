@@ -1,216 +1,251 @@
 <template>
-  <div class="outer">
-    <div class="my-swiper">
-      <swiper class="swiper" :options="swiperOption">
-        <swiper-slide>
-          <img src="../assets/images/1.jpg" alt />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/2.jpg" alt />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/3.jpg" alt />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/4.jpg" alt />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="../assets/images/5.jpg" alt />
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-        <!-- <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>-->
-      </swiper>
-      <div class="top">
-        <div class="back iconfont">&#xe61c;</div>
-        <div class="bar iconfont">&#xe658;</div>
+  <div class="ouer-wrap">
+    <div class="outer">
+      <div class="my-swiper">
+        <swiper class="swiper" :options="swiperOption">
+          <swiper-slide>
+            <img src="../assets/images/1.jpg" alt />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../assets/images/2.jpg" alt />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../assets/images/3.jpg" alt />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../assets/images/4.jpg" alt />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../assets/images/5.jpg" alt />
+          </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+          <!-- <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>-->
+        </swiper>
+        <div class="top">
+          <div class="back iconfont">&#xe61c;</div>
+          <div class="bar iconfont">&#xe658;</div>
+        </div>
       </div>
-    </div>
-    <div class="price">
-      <span>¥</span>
-      <span class="price1299">1299</span>
-    </div>
-    <div class="introduce">阿迪达斯官网UltraBOOST w女跑步运动鞋BB6149 BB6308</div>
-    <div class="mess">
-      <div>快递: 0.00</div>
-      <div class="center">月销量 1050件</div>
-      <div class="right">江苏苏州</div>
-    </div>
-    <div class="promotion">
-      <div class="promotion-title">促销</div>
-      <div class="activity">
-        <div class="activity-one">
-          <div class="pink">
-            <span>促销</span>
+      <div class="price">
+        <span>¥</span>
+        <span class="price1299">1299</span>
+      </div>
+      <div class="introduce">阿迪达斯官网UltraBOOST w女跑步运动鞋BB6149 BB6308</div>
+      <div class="mess">
+        <div>快递: 0.00</div>
+        <div class="center">月销量 1050件</div>
+        <div class="right">江苏苏州</div>
+      </div>
+      <div class="promotion">
+        <div class="promotion-title">促销</div>
+        <div class="activity">
+          <div class="activity-one">
+            <div class="pink">
+              <span>促销</span>
+            </div>
+            <div class="black">满500元,享部分地区包邮</div>
           </div>
-          <div class="black">满500元,享部分地区包邮</div>
-        </div>
-        <div class="activity-two">
-          <div class="pink">
-            <span>积分</span>
+          <div class="activity-two">
+            <div class="pink">
+              <span>积分</span>
+            </div>
+            <div class="black">购买可得649积分</div>
           </div>
-          <div class="black">购买可得649积分</div>
+        </div>
+        <div class="iconfont">&#xe61b;</div>
+      </div>
+      <div class="service">
+        <div class="sevice-title">服务</div>
+        <div class="sevice-con">
+          <ul>
+            <li>假一赔四</li>
+            <li>1分钱超值洗衣</li>
+            <li>退货运费险</li>
+            <li>极速退款</li>
+          </ul>
+        </div>
+        <div class="iconfont">&#xe61b;</div>
+      </div>
+      <div class="choose">
+        <div>选择</div>
+        <div class="choose-con">请选择颜色分类/鞋码</div>
+        <div class="iconfont">&#xe61b;</div>
+      </div>
+      <div class="choose">
+        <div>参数</div>
+        <div class="choose-con">品牌 功能...</div>
+        <div class="iconfont">&#xe61b;</div>
+      </div>
+      <div class="goods-evaluate">
+        <div class="header">
+          <div class="goods-evaluate-num">商品评价(280)</div>
+          <div class="total iconfont">查看全部 &#xe61b;</div>
+        </div>
+        <div class="evaluate-list">
+          <ul>
+            <li v-for="item in list" :key="item">{{item}}</li>
+          </ul>
+        </div>
+        <div class="evaluate-wrap">
+          <div class="thumb">
+            <img src="../assets/images/6.jpeg" />
+            <span>R**5</span>
+          </div>
+          <div
+            class="say-something"
+          >很舒服，第一天就去跑步了！鞋底材质还不错！软，有弹性！运动穿很舒服就是了！白色也很好搭！平时37码 买38码刚刚好！建议买大一码或半码。快递是EMS，挺快的三天到。</div>
+          <div class="time">2020-04-16 颜色分类:亮白;鞋码:38</div>
+          <div class="line"></div>
         </div>
       </div>
-      <div class="iconfont">&#xe61b;</div>
-    </div>
-    <div class="service">
-      <div class="sevice-title">服务</div>
-      <div class="sevice-con">
-        <ul>
-          <li>假一赔四</li>
-          <li>1分钱超值洗衣</li>
-          <li>退货运费险</li>
-          <li>极速退款</li>
-        </ul>
-      </div>
-      <div class="iconfont">&#xe61b;</div>
-    </div>
-    <div class="choose">
-      <div>选择</div>
-      <div class="choose-con">请选择颜色分类/鞋码</div>
-      <div class="iconfont">&#xe61b;</div>
-    </div>
-    <div class="choose">
-      <div>参数</div>
-      <div class="choose-con">品牌 功能...</div>
-      <div class="iconfont">&#xe61b;</div>
-    </div>
-    <div class="goods-evaluate">
-      <div class="header">
-        <div class="goods-evaluate-num">商品评价(280)</div>
-        <div class="total iconfont">查看全部 &#xe61b;</div>
-      </div>
-      <div class="evaluate-list">
-        <ul>
-          <li v-for="item in list" :key="item">{{item}}</li>
-        </ul>
-      </div>
-      <div class="evaluate-wrap">
-        <div class="thumb">
-          <img src="../assets/images/6.jpeg" />
-          <span>R**5</span>
+      <div class="question-wrap">
+        <div class="question">
+          <div class="ques-title">问大家(77)</div>
+          <div class="look-app iconfont">打开app查看全部 &#xe61b;</div>
         </div>
-        <div
-          class="say-something"
-        >很舒服，第一天就去跑步了！鞋底材质还不错！软，有弹性！运动穿很舒服就是了！白色也很好搭！平时37码 买38码刚刚好！建议买大一码或半码。快递是EMS，挺快的三天到。</div>
-        <div class="time">2020-04-16 颜色分类:亮白;鞋码:38</div>
-        <div class="line"></div>
-      </div>
-    </div>
-    <div class="question-wrap">
-      <div class="question">
-        <div class="ques-title">问大家(77)</div>
-        <div class="look-app iconfont">打开app查看全部 &#xe61b;</div>
-      </div>
-      <div class="ques-one">
-        <div>
-          <div class="wen">问</div>最便宜时多少钱呀？谢谢
+        <div class="ques-one">
+          <div>
+            <div class="wen">问</div>最便宜时多少钱呀？谢谢
+          </div>
+          <div class="answer">1个回答</div>
         </div>
-        <div class="answer">1个回答</div>
-      </div>
-      <div class="ques-two">
-        <div>
-          <div class="wen">问</div>鞋子穿久了会不会有些下榻
-        </div>
-        <div class="answer">7个回答</div>
-      </div>
-    </div>
-    <div class="shop">
-      <div class="shop-header">
-        <img src="../assets/images/7.png" alt />
-        <div>
-          <div class="adidas">adidas官方旗舰店</div>
-          <div class="tianmao">天猫</div>
+        <div class="ques-two">
+          <div>
+            <div class="wen">问</div>鞋子穿久了会不会有些下榻
+          </div>
+          <div class="answer">7个回答</div>
         </div>
       </div>
-      <div class="shop-middle">
-        <div>
-          <span class="shop-title">宝贝描述</span>
-          <span class="grade grade-down">4.8</span>
-          <span class="iconfont down">&#xe72a;</span>
+      <div class="shop">
+        <div class="shop-header">
+          <img src="../assets/images/7.png" alt />
+          <div>
+            <div class="adidas">adidas官方旗舰店</div>
+            <div class="tianmao">天猫</div>
+          </div>
         </div>
-        <div>
-          <span class="shop-title">买家服务</span>
-          <span class="grade grade-down">4.7</span>
-          <span class="iconfont down">&#xe72a;</span>
+        <div class="shop-middle">
+          <div>
+            <span class="shop-title">宝贝描述</span>
+            <span class="grade grade-down">4.8</span>
+            <span class="iconfont down">&#xe72a;</span>
+          </div>
+          <div>
+            <span class="shop-title">买家服务</span>
+            <span class="grade grade-down">4.7</span>
+            <span class="iconfont down">&#xe72a;</span>
+          </div>
+          <div>
+            <span class="shop-title">物流服务</span>
+            <span class="grade grade-up">4.8</span>
+            <span class="iconfont up">&#xe729;</span>
+          </div>
         </div>
-        <div>
-          <span class="shop-title">物流服务</span>
-          <span class="grade grade-up">4.8</span>
-          <span class="iconfont up">&#xe729;</span>
+        <div class="shop-foot">
+          <div>全部商品</div>
+          <div>进入店铺</div>
         </div>
       </div>
-      <div class="shop-foot">
-        <div>全部商品</div>
-        <div>进入店铺</div>
+      <div class="look-look">看了又看</div>
+      <div class="sorry">对不起，找不到相关的商品</div>
+      <div class="detail">
+        <div class="xiangqing">-------详情------</div>
+      </div>
+      <div class="boost">"Boost技术 尺码参考试穿报告"</div>
+      <div class="goods-pic">
+        <div class="pic-title">商品图片</div>
+        <div class="pics">
+          <img src="../assets/images/7.jpg" alt />
+          <img src="../assets/images/8.jpg" alt />
+          <img src="../assets/images/9.jpg" alt />
+          <img src="../assets/images/10.jpg" alt />
+          <img src="../assets/images/11.jpg" alt />
+          <img src="../assets/images/12.jpg" alt />
+          <img src="../assets/images/13.jpg" alt />
+          <img src="../assets/images/14.jpg" alt />
+          <img src="../assets/images/15.jpg" alt />
+          <img src="../assets/images/16.jpg" alt />
+          <img src="../assets/images/17.jpg" alt />
+          <img src="../assets/images/18.jpg" alt />
+          <img src="../assets/images/19.jpg" alt />
+        </div>
+      </div>
+      <div class="product-con">
+        <div class="product-mess">产品信息</div>
+        <div class="mess-con">
+          <table>
+            <tr>
+              <td>功能</td>
+              <td>平衡</td>
+            </tr>
+            <tr>
+              <td>品牌</td>
+              <td>Adidas/阿迪达斯</td>
+            </tr>
+            <tr>
+              <td>上市时间</td>
+              <td>2019年冬季</td>
+            </tr>
+            <tr>
+              <td>是否商场同款</td>
+              <td>是</td>
+            </tr>
+            <tr>
+              <td>吊牌图</td>
+              <td>
+                <img src="../assets/images/21.jpg" alt />
+              </td>
+            </tr>
+            <tr>
+              <td>适合路面</td>
+              <td>小道、公路、跑道</td>
+            </tr>
+            <tr>
+              <td>运动鞋科技</td>
+              <td>Ultraboost</td>
+            </tr>
+            <tr>
+              <td>吊牌价</td>
+              <td>1099.00</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="custom">自定义</div>
+      <div>
+        <img src="../assets/images/20.png" alt />
       </div>
     </div>
-    <div class="look-look">看了又看</div>
-    <div class="sorry">对不起，找不到相关的商品</div>
-    <div class="detail">
-      <div class="xiangqing">-------详情------</div>
-    </div>
-    <div class="boost">"Boost技术 尺码参考试穿报告"</div>
-    <div class="goods-pic">
-      <div class="pic-title">商品图片</div>
-      <div class="pics">
-        <img src="../assets/images/7.jpg" alt="">
-        <img src="../assets/images/8.jpg" alt="">
-        <img src="../assets/images/9.jpg" alt="">
-        <img src="../assets/images/10.jpg" alt="">
-        <img src="../assets/images/11.jpg" alt="">
-        <img src="../assets/images/12.jpg" alt="">
-        <img src="../assets/images/13.jpg" alt="">
-        <img src="../assets/images/14.jpg" alt="">
-        <img src="../assets/images/15.jpg" alt="">
-        <img src="../assets/images/16.jpg" alt="">
-        <img src="../assets/images/17.jpg" alt="">
-        <img src="../assets/images/18.jpg" alt="">
-        <img src="../assets/images/19.jpg" alt="">
+    <div class="fixed-wrap">
+      <div class="main-foot">
+        <div class="three">
+          <div>
+            <div class="iconfont">&#xe895;</div>
+            <div>店铺</div>
+          </div>
+          <div>
+            <div class="iconfont blue">&#xe60d;</div>
+            <div>客服</div>
+          </div>
+          <div>
+            <div class="iconfont">&#xe603;</div>
+            <div>收藏</div>
+          </div>
+        </div>
+        <div class="two">
+          <div>加入购物车</div>
+          <div>立即购买</div>
+        </div>
+      </div>
+      <div class="main-head" :class="{opacity:opacity}">
+        <div class="iconfont head-log1">&#xe61c;</div>
+        <div class="head-title1" :class="{red:choose==1}" @click="chooseMe(1)">商品</div>
+        <div class="head-title2" :class="{red:choose==2}" @click="chooseMe(2)">评价</div>
+        <div class="head-title3" :class="{red:choose==3}" @click="chooseMe(3)">详情</div>
+        <div class="iconfont head-log2">&#xe658;</div>
       </div>
     </div>
-  <div class="product-con">
-    <div class="product-mess">产品信息</div>
-    <div class="mess-con">
-      <table>
-        <tr>
-          <td>功能</td>
-          <td>平衡</td>
-        </tr>
-        <tr>
-          <td>品牌</td>
-          <td>Adidas/阿迪达斯</td>
-        </tr>
-        <tr>
-          <td>上市时间</td>
-          <td>2019年冬季</td>
-        </tr>
-        <tr>
-          <td>是否商场同款</td>
-          <td>是</td>
-        </tr>
-        <tr>
-          <td>吊牌图</td>
-          <td><img src="../assets/images/21.jpg" alt=""></td>
-        </tr>
-        <tr>
-          <td>适合路面</td>
-          <td>小道、公路、跑道</td>
-        </tr>
-        <tr>
-          <td>运动鞋科技</td>
-          <td>Ultraboost</td>
-        </tr>
-        <tr>
-          <td>吊牌价</td>
-          <td>1099.00</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <div class="custom">自定义</div>
-  <div><img src="../assets/images/20.png" alt=""></div>
   </div>
 </template>
 
@@ -227,6 +262,9 @@ export default {
   },
   data() {
     return {
+      timer: null,
+      opacity: true,
+      choose: 1,
       list: [
         "鞋子不错(12)",
         "穿着效果不错(10)",
@@ -245,13 +283,148 @@ export default {
         }
       }
     };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      console.log(scrollTop);
+      if (scrollTop > 30) {
+        this.opacity = false;
+      } else {
+        this.opacity = true;
+      }
+      if (scrollTop >= 0 && scrollTop <= 616) {
+        this.choose = 1;
+      } else if (scrollTop > 616 && scrollTop <= 1130) {
+        this.choose = 2;
+      } else {
+        this.choose = 3;
+      }
+    },
+    chooseMe(n) {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+
+      this.choose = n;
+      if (this.choose == 1) {
+        document.documentElement.scrollTop = 0;
+      }
+      if (this.choose == 2) {
+        document.documentElement.scrollTop = 617;
+      }
+      if (this.choose == 3) {
+        document.documentElement.scrollTop = 1131;
+      }
+    }
   }
 };
 </script>
 <style scoped>
+.outer-wrap {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+}
+.main-foot {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  /* background:palegoldenrod */
+  display: flex;
+  font-weight: 500;
+}
+.three {
+  width: 45%;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+}
+.three > div {
+  flex: 1;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}
+.three > div div:nth-child(1) {
+  font-size: 22px;
+  /* color:red; */
+  font-weight: 500;
+}
+.blue {
+  color: #87b5ea;
+}
+.two {
+  flex: 1;
+  /* background: palegreen; */
+  display: flex;
+  color: white;
+  font-size: 15px;
+  align-items: center;
+}
+.two div {
+  flex: 1;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+.two div:first-child {
+  background: #ff9500;
+}
+.two div:nth-child(2) {
+  background: #ff0036;
+}
+.main-head {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
+  background: white;
+  /* opacity: 0; */
+  height: 44px;
+  border-bottom: 1px solid rgb(226, 224, 224);
+  display: flex;
+  color: #999;
+  text-align: center;
+  align-items: center;
+}
+.opacity {
+  opacity: 0;
+}
+.head-log1,
+.head-log2 {
+  margin: 5px;
+  font-size: 20px;
+  width: 45px;
+  font-weight: 600;
+}
+.head-log1 {
+  font-weight: bolder;
+}
+.head-title1,
+.head-title2,
+.head-title3 {
+  flex: 1;
+  height: 44px;
+  font-size: 13px;
+  line-height: 44px;
+}
+.red {
+  color: #ff0036;
+  border-bottom: 2px solid #ff0036;
+}
 .outer {
   background: #f3f3f3;
-  width:100%;
+  width: 100%;
   /* height:100% */
 }
 img {
@@ -285,7 +458,7 @@ img {
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 10px;
-  left: 88%;
+  left: 86%;
 }
 
 .top {
@@ -680,7 +853,9 @@ img {
   text-align: center;
   margin-bottom: 10px;
 }
-.pic-title ,.product-mess,.custom{
+.pic-title,
+.product-mess,
+.custom {
   background: white;
   font-weight: 400;
   height: 34px;
@@ -690,33 +865,36 @@ img {
   color: #666;
   border-left: 3px solid #ff0036;
 }
-.pics{
+.pics {
   margin-bottom: 10px;
 }
-.pics img{
-  margin-top:-5px
+.pics img {
+  margin-top: -5px;
 }
-.custom{
-  margin-bottom:10px
+.custom {
+  margin-bottom: 10px;
 }
-.mess-con{
-  margin-bottom:10px;
-  font-size:12px;
-  line-height:24px;
-  color:#999;
-  padding:15px 12px 0 18px;
-  background:rgb(248, 248, 248)
+.mess-con {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  color: #999;
+  padding: 15px 12px 0 18px;
+  background: rgb(248, 248, 248);
 }
-table{
-  width:100%;
-  border-collapse:separate
+table {
+  width: 100%;
+  border-collapse: separate;
 }
-table img{
-  width:90px;
-  height:90px
+table img {
+  width: 90px;
+  height: 90px;
 }
-table tr td:first-child{
-  width:20%;
-  padding-right:10px
+table tr td:first-child {
+  width: 20%;
+  padding-right: 10px;
+}
+table tr td:nth-child(2) {
+  color: #051b28;
 }
 </style>
