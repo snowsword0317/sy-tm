@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Good from '../views/Good.vue'
 import Classify from '../views/Classify.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,10 @@ Vue.use(VueRouter)
   {
     path: '/good',
     component: Good
+  },
+  {
+    path: '/login',
+    component: Login
   },
   {
     path:'/classify',

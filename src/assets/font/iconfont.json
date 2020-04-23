@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2597",
+      "name": "天猫形象1",
+      "font_class": "tianmaoxingxiang1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "688114",
+      "name": "天猫 购物袋",
+      "font_class": "tianmaogouwudai",
+      "unicode": "e798",
+      "unicode_decimal": 59288
+    },
+    {
+      "icon_id": "688115",
+      "name": "天猫 T",
+      "font_class": "tianmaot",
+      "unicode": "e799",
+      "unicode_decimal": 59289
+    },
+    {
+      "icon_id": "100689",
+      "name": "天猫宝",
+      "font_class": "tianmaobao",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
       "icon_id": "2036621",
       "name": "五角星空",
       "font_class": "wujiaoxingkong",
