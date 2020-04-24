@@ -246,7 +246,6 @@ ul {
   padding: 0px 10px;
 }
 li {
-  width: 76px;
   height: 89px;
 }
 a {
