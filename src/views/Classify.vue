@@ -241,7 +241,6 @@ export default {
   display: inline-block;
   width: 78%;
   height: 93%;
-  border: 1px solid saddlebrown;
   vertical-align: top;
   overflow: auto;
 }
