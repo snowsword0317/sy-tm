@@ -1,6 +1,6 @@
 <template>
   <div class="outer">
-    <div class="iconfont thumb">&#xe61a;</div>
+    <div class="iconfont thumb">&#xe600;</div>
     <div class="login">
       <div class="input1">
         <input type="text" placeholder="手机号/邮箱/会员名" />
