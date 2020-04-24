@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7501117",
+      "name": "爱心线条",
+      "font_class": "aixinxiantiao",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
       "icon_id": "2597",
       "name": "天猫形象1",
       "font_class": "tianmaoxingxiang1",

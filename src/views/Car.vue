@@ -9,7 +9,7 @@
       <div class="goods-car">
         <div class="shop-name">
           <div class="iconfont red">&#xe798;</div>
-          <div>天猫官方旗舰店</div>
+          <div>天猫旗舰店</div>
           <div class="iconfont">&#xe61b;</div>
           <div>领券</div>
           <div>编辑</div>
@@ -25,15 +25,54 @@
                 <div>
                   <img src="../assets/images/22.jpg" />
                 </div>
-                <div></div>
+                <div class="mess">
+                  <div>CONVERSE匡威官方 Jack Purcell 开口笑 简约百搭休闲鞋 167706C</div>
+                  <div class="mess-price">
+                    <div>¥465</div>
+                    <div>
+                      <span>-</span>
+                      <span>1</span>
+                      <span>+</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="hidden">删除</div>
           </div>
         </div>
       </div>
+      <div class="you-like">
+        <div class="title">
+          <div class="iconfont">&#xe66f;</div>
+          <div>你可能还喜欢</div>
+        </div>
+        <div class="you-like-goods">
+          <div class="goods-wrap">
+            <div>
+              <img src="../assets/images/24.jpg" alt />
+            </div>
+            <div>雅诗兰黛DW持妆粉底液 油皮亲妈持久不脱妆遮瑕控油防晒 官方正品</div>
+            <div>
+              <span>¥ 390</span>
+              <span>25431人已购买</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="foot-fix"></div>
+    <div class="foot-fix">
+      <div>
+        <input type="checkbox" name="checkall" id="checkall" />
+        <label for="checkall"></label>
+      </div>
+      <div>全选</div>
+      <div>
+        合计:
+        <span>¥0.00</span>
+      </div>
+      <div>结算</div>
+    </div>
   </div>
 </template>
 
@@ -51,6 +90,7 @@ export default {};
   width: 100%;
   height: 100%;
   background: #eee;
+  position: relative;
 }
 .header {
   background: white;
@@ -79,6 +119,7 @@ export default {};
   font-size: 12px;
   color: #333;
   background: white;
+  margin-bottom: 20px;
   /* display: flex; */
 }
 .shop-name {
@@ -130,16 +171,47 @@ export default {};
   display: flex;
   align-items: center;
   /* transform: translateX(-60px); */
+  padding: 8px 0;
 }
 .show input {
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   background: transparent;
   border: 1px solid #000;
+  visibility: hidden;
+}
+.show input + label {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #a6a6a6;
+  border-radius: 50%;
+  background-color: #dedede;
+}
+.show input:checked + label {
+  background: #ff0036;
+  border: none;
+}
+.show input:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 9px;
+  height: 4px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+  /* background: #FF0036; */
+  color: white;
 }
 .show img {
   width: 98px;
   height: 98px;
+  margin-left: 10px;
 }
 .hidden {
   width: 60px;
@@ -153,5 +225,167 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.mess {
+  flex: 1;
+  /* background: #ff0036; */
+  height: 100%;
+  padding-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: normal;
+  margin-left: 20px;
+}
+.mess-price {
+  display: flex;
+  justify-content: space-between;
+}
+.mess-price div:nth-child(1) {
+  font-size: 16px;
+  color: #ff0036;
+}
+.mess-price div:nth-child(2) {
+  display: flex;
+  width: 98px;
+}
+.mess-price div:nth-child(2) span {
+  font-size: 16px;
+  flex: 1;
+  text-align: center;
+  color: #333;
+}
+.you-like {
+  width: 100%;
+  /* height:100px; */
+  background: rgb(247, 247, 247);
+}
+.title {
+  line-height: 44px;
+  height: 44px;
+  color: #ff0036;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  align-items: center;
+}
+
+.title .iconfont {
+  width: 20px;
+  height: 20px;
+  /* padding:2px; */
+  background: #ff0036;
+  color: white;
+  margin: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.you-like-goods {
+  width: 100%;
+  padding: 0 15px;
+}
+.goods-wrap {
+  width: 170px;
+  height: 260px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.goods-wrap img {
+  width: 170px;
+  height: 170px;
+  margin-bottom: 5px;
+}
+.goods-wrap div:nth-child(2) {
+  font-size: 12px;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.goods-wrap div:nth-child(3) span:nth-child(1){
+    color:#ff0036;
+    font-size:12px;
+    margin-right: 8px;
+}
+.goods-wrap div:nth-child(3) span:nth-child(2){
+    color:#999;
+    font-size:12px
+}
+
+
+
+
+
+
+.foot-fix {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 48px;
+  /* background: chocolate; */
+  display: flex;
+  border-top: 1px solid rgb(223, 220, 220);
+  line-height: 48px;
+}
+.foot-fix input {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 1px solid #000;
+  visibility: hidden;
+}
+.foot-fix input + label {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #a6a6a6;
+  border-radius: 50%;
+  background-color: #dedede;
+}
+.foot-fix input:checked + label {
+  background: #ff0036;
+  border: none;
+}
+.foot-fix input:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 9px;
+  height: 4px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+  /* background: #FF0036; */
+  color: white;
+}
+
+.foot-fix div:nth-child(1) {
+  width: 45px;
+}
+.foot-fix div:nth-child(2) {
+  color: #333;
+  font-size: 16px;
+  flex: 1;
+}
+.foot-fix div:nth-child(3) {
+  width: 110px;
+}
+.foot-fix div:nth-child(3) span {
+  color: #ff0036;
+  margin-left: 5px;
+}
+.foot-fix div:nth-child(4) {
+  width: 100px;
+  background: #ff0036;
+  color: white;
+  text-align: center;
 }
 </style>
