@@ -48,16 +48,18 @@
           <div>你可能还喜欢</div>
         </div>
         <div class="you-like-goods">
-          <div class="goods-wrap">
-            <div>
-              <img src="../assets/images/24.jpg" alt />
+          <router-link to="/good" v-for="item in goodsList" :key="item.num">
+            <div class="goods-wrap">
+              <div>
+                <img :src="item.thumb" alt />
+              </div>
+              <div>{{item.name}}</div>
+              <div>
+                <span>¥ {{item.price}}</span>
+                <span>{{item.people}}人已购买</span>
+              </div>
             </div>
-            <div>雅诗兰黛DW持妆粉底液 油皮亲妈持久不脱妆遮瑕控油防晒 官方正品</div>
-            <div>
-              <span>¥ 390</span>
-              <span>25431人已购买</span>
-            </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -79,12 +81,21 @@
 <script>
 // @ is an alias to /src
 
-export default {};
+export default {
+  computed: {
+    goodsList() {
+      return this.$store.state.goodsList;
+    }
+  }
+};
 </script>
 <style scoped>
 @font-face {
   font-family: helvetica;
   src: url("../assets/Helvetica.otf");
+}
+a{
+  text-decoration: none;
 }
 .outer-wrap {
   width: 100%;
@@ -286,12 +297,20 @@ export default {};
 .you-like-goods {
   width: 100%;
   padding: 0 15px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* white-space: normal; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .goods-wrap {
   width: 170px;
   height: 260px;
   border-radius: 5px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .goods-wrap img {
   width: 170px;
@@ -306,27 +325,22 @@ export default {};
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.goods-wrap div:nth-child(3) span:nth-child(1){
-    color:#ff0036;
-    font-size:12px;
-    margin-right: 8px;
+.goods-wrap div:nth-child(3) span:nth-child(1) {
+  color: #ff0036;
+  font-size: 12px;
+  margin-right: 8px;
 }
-.goods-wrap div:nth-child(3) span:nth-child(2){
-    color:#999;
-    font-size:12px
+.goods-wrap div:nth-child(3) span:nth-child(2) {
+  color: #999;
+  font-size: 12px;
 }
-
-
-
-
-
 
 .foot-fix {
   position: fixed;
   bottom: 0px;
   width: 100%;
   height: 48px;
-  /* background: chocolate; */
+  background: #eee;
   display: flex;
   border-top: 1px solid rgb(223, 220, 220);
   line-height: 48px;
