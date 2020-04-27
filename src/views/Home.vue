@@ -75,7 +75,38 @@
         </li>
       </ul>
     </div>
-    <div class="home-roll"></div>
+    <div class="home-roll">
+      <div class="roll-shell">
+        <swiper ref="mySwiper" :options="swiperOptions">
+          <swiper-slide class="slide">
+            <a href="https://pages.tmall.com/wow/mit/act/download?mmstat=tb_homepagejiao&src=tb_homepage&pos=1&acm=201810194.1003.2.7697690&scm=1003.2.201810194.OTHER_1587988720254_7697690&firstModule=7&spm=a211ue.11501597.banner.1">
+              <img src="//gw.alicdn.com/tfs/TB17emto4n1gK0jSZKPXXXvUXXa-1035-390.png_790x10000.jpg_.webp" alt="">
+            </a>
+          </swiper-slide>
+          <swiper-slide class="slide">
+            <a href="https://shop491733054.m.taobao.com?pos=1&acm=&scm=1049.lyg_turing_-1_335.146383.146383-THJH_215488&spm=a211ue.11501597.banner.2">
+              <img src="//gw.alicdn.com/tps/i4/TB1NBFzCVY7gK0jSZKzSuuikpXa.jpg_790x10000Q75.jpg_.webp" alt="">
+            </a>
+          </swiper-slide>
+          <swiper-slide class="slide">
+            <a href="https://haier.tmall.com/shop/view_shop.htm?mytmenu=mdianpu&user_number_id=470168984&utkn=g,xkr3n65z3g333rxmxwrll2q1585880124865&pos=1&acm=&scm=1049.lyg_turing_-1_124.145284.145284-THJH_213897&spm=a211ue.11501597.banner.3">
+              <img src="//gw.alicdn.com/tps/i4/TB1if9eAKL2gK0jSZPhSuuhvXXa.jpg_790x10000Q75.jpg_.webp" alt="">
+            </a>
+          </swiper-slide>
+          <swiper-slide class="slide">
+            <a href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4">
+              <img src="//gw.alicdn.com/tfs/TB1RmWvDND1gK0jSZFKXXcJrVXa-1035-390.jpg_790x10000Q75.jpg_.webp" alt="">
+            </a>
+          </swiper-slide>
+          <swiper-slide class="slide">
+            <a href="">
+              <img src="" alt="">
+            </a>
+          </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+      </div>
+    </div>
     <div class="home-promotion"></div>
     <div class="home-bottom-title">猜你喜欢</div>
     <ul class="home-bottom-goods">
@@ -119,7 +150,42 @@
 </template>
 
 <script>
-export default {};
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+
+export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
+  },
+  data() {
+    return {
+      swiperOptions: {
+        direction: "horizontal",
+        autoplay: {
+          disableOnInteraction: false, // 用户操作swiper之后，是否禁止autoplay
+          delay: 5000 // 自动切换的时间间隔（单位ms）
+        },
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable :true,
+        }
+      }
+    };
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper;
+    }
+  },
+  mounted() {
+    this.swiper.slideTo(1, 1000, true);
+  }
+};
 </script>
 
 <style>
@@ -227,8 +293,28 @@ export default {};
 /*轮播图  */
 .home-roll {
   height: 113px;
-  border: 1px solid skyblue;
+  /* border: 1px solid skyblue; */
 }
+.roll-shell {
+  width: 94%;
+  height: 100px;
+  margin: 2% 10px;
+}
+.slide {
+  width: 100%;
+  height: 100px;
+  /* border: 1px solid saddlebrown; */
+}
+
+.slide>a{
+  display: block;
+}
+.slide>a>img{
+  width: 100%;
+  height: 100%;
+}
+
+
 /* 促销栏 */
 .home-promotion {
   height: 233px;
