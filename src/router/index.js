@@ -5,6 +5,7 @@ import Good from '../views/Good.vue'
 import Classify from '../views/Classify.vue'
 import Login from '../views/Login.vue'
 import Car from '../views/Car.vue'
+import Search from '../views/Search.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,10 @@ Vue.use(VueRouter)
   {
     path:'/classify',
     component: Classify
+  },
+  {
+    path:'/search',
+    component:Search
   }
 ]
 
