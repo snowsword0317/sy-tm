@@ -8,10 +8,10 @@ export default new Vuex.Store({
     goodsList:[
       {
         num:"1",
-        name:"雅诗兰黛DW持妆粉底液 油皮亲妈持久不脱妆遮瑕控油防晒 官方正品",
-        thumb:"/goods-list/24.jpg",
-        price:"390",
-        people:"25647",
+        name:"阿迪达斯官网UltraBOOST w女跑步运动鞋BB6149 BB6308",
+        thumb:"/goods-list/1.jpg",
+        price:"1299",
+        people:"1299",
         post:"0.00"
       },
       {
