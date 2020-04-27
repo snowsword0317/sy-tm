@@ -3,17 +3,17 @@
     <div class="iconfont thumb">&#xe600;</div>
     <div class="login">
       <div class="input1">
-        <input type="text" placeholder="手机号/邮箱/会员名" />
+        <input type="text" class="uname" placeholder="手机号/邮箱/会员名" />
       </div>
       <div class="input2">
-        <input type="text" placeholder="请输入登陆密码" />
+        <input type="text" class="pwd" placeholder="请输入登陆密码" />
       </div>
       <div class="mess-login">
         <div>短信验证码登陆</div>
         <div>免费注册</div>
       </div>
       <div>
-        <button>登陆</button>
+        <button @click="login">登陆</button>
       </div>
     </div>
   </div>
@@ -22,7 +22,20 @@
 <script>
 // @ is an alias to /src
 
-export default {};
+export default {
+  methods:{
+    login(){
+      let uname =  document.querySelector(".uname").value
+      let pwd = document.querySelector(".pwd").value;
+     
+      if(uname == this.$store.state.uname && pwd == this.$store.state.pwd){
+        this.$router.replace("/car");
+        this.$router.meta = 3
+        console.log(this.$router)
+      }
+    }
+  }
+};
 </script>
 <style scoped>
 .outer {

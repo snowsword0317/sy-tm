@@ -2,8 +2,8 @@
   <div class="outer-wrap">
     <div class="outer">
       <div class="header">
-        <div class="iconfont">&#xe61c;</div>
-        <div>购物车（）</div>
+        <div class="iconfont" @click="back">&#xe61c;</div>
+        <div>购物车({{length}})</div>
         <div></div>
       </div>
       <div class="goods-car">
@@ -12,33 +12,33 @@
           <div>天猫旗舰店</div>
           <div class="iconfont">&#xe61b;</div>
           <div>领券</div>
-          <div>编辑</div>
+          <div @click="trans">编辑</div>
         </div>
         <div clss="car-list">
-          <div class="out-wrap goods">
+          <div class="out-wrap goods" v-for="(item,index) in carList" :key="item.name" >
             <div class="inner-wrap">
-              <div class="show">
+              <div class="show" :class="{trans:isTrans}">
                 <div>
                   <input type="checkbox" name="convanse" id="convanse" />
                   <label for="convanse"></label>
                 </div>
                 <div>
-                  <img src="../assets/images/22.jpg" />
+                  <img :src="item.thumb" />
                 </div>
                 <div class="mess">
-                  <div>CONVERSE匡威官方 Jack Purcell 开口笑 简约百搭休闲鞋 167706C</div>
+                  <div>{{item.name}}</div>
                   <div class="mess-price">
-                    <div>¥465</div>
+                    <div>¥{{item.price}}</div>
                     <div>
-                      <span>-</span>
-                      <span>1</span>
-                      <span>+</span>
+                      <span @click="minus(index)">-</span>
+                      <span>{{item.per}}</span>
+                      <span @click="plus(index)">+</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="hidden">删除</div>
+            <div class="hidden" v-if="isIndex" @click="deleteGoods(index)">删除</div>
           </div>
         </div>
       </div>
@@ -48,7 +48,11 @@
           <div>你可能还喜欢</div>
         </div>
         <div class="you-like-goods">
-          <router-link to="/good" v-for="item in goodsList" :key="item.num">
+          <router-link
+            :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price"
+            v-for="item in goodsList"
+            :key="item.num"
+          >
             <div class="goods-wrap">
               <div>
                 <img :src="item.thumb" alt />
@@ -85,7 +89,45 @@ export default {
   computed: {
     goodsList() {
       return this.$store.state.goodsList;
+    },
+
+     carList() {
+      return this.$store.state.carList;
+    },
+
+    length() {
+      return this.$store.state.carList.length;
     }
+  },
+  data(){
+    return {
+      isTrans:false,
+      isIndex:false
+    }
+  },
+  methods: {
+    back() {
+      this.$router.push("/");
+    },
+    trans(){
+        if(this.isTrans){
+          this.isTrans = false
+          this.isIndex = false
+        }else{
+          this.isTrans = true
+           this.isIndex = true
+        }
+        console.log(123)
+    },
+    deleteGoods(index){
+       this.$store.commit("deleteGoods",index)
+    },
+    plus(index){
+       this.$store.commit("plus",index)
+    },
+    minus(index){
+       this.$store.commit("minus",index)
+    },
   }
 };
 </script>
@@ -94,7 +136,7 @@ export default {
   font-family: helvetica;
   src: url("../assets/Helvetica.otf");
 }
-a{
+a {
   text-decoration: none;
 }
 .outer-wrap {
@@ -181,8 +223,11 @@ a{
   background: white;
   display: flex;
   align-items: center;
-  /* transform: translateX(-60px); */
   padding: 8px 0;
+}
+.trans{
+  transform: translateX(-60px);
+  transition: all .5s;
 }
 .show input {
   width: 20px;
@@ -236,6 +281,7 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+   z-index: 20;
 }
 .mess {
   flex: 1;
@@ -296,7 +342,7 @@ a{
 }
 .you-like-goods {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 12px;
   /* display: flex; */
   /* justify-content: space-between; */
   /* white-space: normal; */
@@ -304,6 +350,7 @@ a{
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 47px;
 }
 .goods-wrap {
   width: 170px;

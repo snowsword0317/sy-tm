@@ -4,7 +4,7 @@
       <div class="my-swiper">
         <swiper class="swiper" :options="swiperOption">
           <swiper-slide>
-            <img src="../assets/images/1.jpg" alt />
+            <img :src="$route.query.thumb" alt />
           </swiper-slide>
           <swiper-slide>
             <img src="../assets/images/2.jpg" alt />
@@ -23,18 +23,18 @@
           <div class="swiper-button-next" slot="button-next"></div>-->
         </swiper>
         <div class="top">
-          <div class="back iconfont">&#xe61c;</div>
-          <div class="bar iconfont">&#xe658;</div>
+          <div class="back iconfont" @click="back">&#xe61c;</div>
+          <div class="bar iconfont" @click="join">&#xe658;</div>
         </div>
       </div>
       <div class="price">
         <span>¥</span>
-        <span class="price1299">1299</span>
+        <span class="price1299">{{$route.query.price}}</span>
       </div>
-      <div class="introduce">阿迪达斯官网UltraBOOST w女跑步运动鞋BB6149 BB6308</div>
+      <div class="introduce">{{$route.query.name}}</div>
       <div class="mess">
-        <div>快递: 0.00</div>
-        <div class="center">月销量 1050件</div>
+        <div>快递: {{$route.query.post}}</div>
+        <div class="center">月销量 {{$route.query.people}}件</div>
         <div class="right">江苏苏州</div>
       </div>
       <div class="promotion">
@@ -213,7 +213,7 @@
         </div>
       </div>
       <div class="custom">自定义</div>
-      <div>
+      <div class="foot">
         <img src="../assets/images/20.png" alt />
       </div>
     </div>
@@ -234,16 +234,16 @@
           </div>
         </div>
         <div class="two">
-          <div>加入购物车</div>
+          <div @click="join">加入购物车</div>
           <div>立即购买</div>
         </div>
       </div>
       <div class="main-head" :class="{opacity:opacity}">
-        <div class="iconfont head-log1">&#xe61c;</div>
+        <div class="iconfont head-log1" @click="back">&#xe61c;</div>
         <div class="head-title1" :class="{red:choose==1}" @click="chooseMe(1)">商品</div>
         <div class="head-title2" :class="{red:choose==2}" @click="chooseMe(2)">评价</div>
         <div class="head-title3" :class="{red:choose==3}" @click="chooseMe(3)">详情</div>
-        <div class="iconfont head-log2">&#xe658;</div>
+        <div class="iconfont head-log2" @click="join">&#xe658;</div>
       </div>
     </div>
   </div>
@@ -286,6 +286,7 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    document.documentElement.scrollTop = 0
   },
   methods: {
     handleScroll() {
@@ -293,7 +294,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      console.log(scrollTop);
+      // console.log(scrollTop);
       if (scrollTop > 30) {
         this.opacity = false;
       } else {
@@ -322,6 +323,23 @@ export default {
       }
       if (this.choose == 3) {
         document.documentElement.scrollTop = 1131;
+      }
+    },
+    back(){
+      this.$router.go(-1)
+    },
+    join(){
+      let goods = {
+          name : this.$route.query.name ,
+          thumb : this.$route.query.thumb ,
+          price : this.$route.query.price ,
+          per : 1
+        };
+         this.$store.commit("pushCarList",goods)
+      if(this.$router.meta == 3){
+        this.$router.push("/car");
+      }else{
+        this.$router.push("/login");
       }
     }
   }
@@ -896,5 +914,8 @@ table tr td:first-child {
 }
 table tr td:nth-child(2) {
   color: #051b28;
+}
+.foot{
+  margin-bottom: 60px;
 }
 </style>
