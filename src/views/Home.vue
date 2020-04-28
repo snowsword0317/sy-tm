@@ -79,39 +79,64 @@
       <div class="roll-shell">
         <swiper ref="mySwiper" :options="swiperOptions">
           <swiper-slide class="slide">
-            <a href="https://pages.tmall.com/wow/mit/act/download?mmstat=tb_homepagejiao&src=tb_homepage&pos=1&acm=201810194.1003.2.7697690&scm=1003.2.201810194.OTHER_1587988720254_7697690&firstModule=7&spm=a211ue.11501597.banner.1">
-              <img src="//gw.alicdn.com/tfs/TB17emto4n1gK0jSZKPXXXvUXXa-1035-390.png_790x10000.jpg_.webp" alt="">
+            <a
+              href="https://pages.tmall.com/wow/mit/act/download?mmstat=tb_homepagejiao&src=tb_homepage&pos=1&acm=201810194.1003.2.7697690&scm=1003.2.201810194.OTHER_1587988720254_7697690&firstModule=7&spm=a211ue.11501597.banner.1"
+            >
+              <img
+                src="//gw.alicdn.com/tfs/TB17emto4n1gK0jSZKPXXXvUXXa-1035-390.png_790x10000.jpg_.webp"
+                alt
+              />
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
-            <a href="https://shop491733054.m.taobao.com?pos=1&acm=&scm=1049.lyg_turing_-1_335.146383.146383-THJH_215488&spm=a211ue.11501597.banner.2">
-              <img src="//gw.alicdn.com/tps/i4/TB1NBFzCVY7gK0jSZKzSuuikpXa.jpg_790x10000Q75.jpg_.webp" alt="">
+            <a
+              href="https://shop491733054.m.taobao.com?pos=1&acm=&scm=1049.lyg_turing_-1_335.146383.146383-THJH_215488&spm=a211ue.11501597.banner.2"
+            >
+              <img
+                src="//gw.alicdn.com/tps/i4/TB1NBFzCVY7gK0jSZKzSuuikpXa.jpg_790x10000Q75.jpg_.webp"
+                alt
+              />
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
-            <a href="https://haier.tmall.com/shop/view_shop.htm?mytmenu=mdianpu&user_number_id=470168984&utkn=g,xkr3n65z3g333rxmxwrll2q1585880124865&pos=1&acm=&scm=1049.lyg_turing_-1_124.145284.145284-THJH_213897&spm=a211ue.11501597.banner.3">
-              <img src="//gw.alicdn.com/tps/i4/TB1if9eAKL2gK0jSZPhSuuhvXXa.jpg_790x10000Q75.jpg_.webp" alt="">
+            <a
+              href="https://haier.tmall.com/shop/view_shop.htm?mytmenu=mdianpu&user_number_id=470168984&utkn=g,xkr3n65z3g333rxmxwrll2q1585880124865&pos=1&acm=&scm=1049.lyg_turing_-1_124.145284.145284-THJH_213897&spm=a211ue.11501597.banner.3"
+            >
+              <img
+                src="//gw.alicdn.com/tps/i4/TB1if9eAKL2gK0jSZPhSuuhvXXa.jpg_790x10000Q75.jpg_.webp"
+                alt
+              />
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
-            <a href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4">
-              <img src="//gw.alicdn.com/tfs/TB1RmWvDND1gK0jSZFKXXcJrVXa-1035-390.jpg_790x10000Q75.jpg_.webp" alt="">
+            <a
+              href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4"
+            >
+              <img
+                src="//gw.alicdn.com/tfs/TB1RmWvDND1gK0jSZFKXXcJrVXa-1035-390.jpg_790x10000Q75.jpg_.webp"
+                alt
+              />
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
-            <a href="">
-              <img src="" alt="">
+            <a href>
+              <img src alt />
             </a>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
     </div>
-    <div class="home-promotion"></div>
+    <div class="home-promotion">
+      <div class="home-promotion-small home-sale"></div>
+      <div class="home-promotion-small home-goods"></div>
+      <div class="home-promotion-small home-ju"></div>
+      <div class="home-promotion-small home-sale"></div>
+    </div>
     <div class="home-bottom-title">猜你喜欢</div>
     <ul class="home-bottom-goods">
-      <li>
-        <router-link to="/good">商品详情</router-link>
+      <li v-for="(item, index) in onelist" :key="index">
+        <router-link :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price">商品详情</router-link>
       </li>
       <li>
         <a
@@ -123,6 +148,9 @@
             class="redbag"
           />
         </a>
+      </li>
+      <li>
+        <router-link to="/good">商品详情</router-link>
       </li>
       <li>
         <router-link to="/good">商品详情</router-link>
@@ -172,15 +200,28 @@ export default {
         loop: true,
         pagination: {
           el: ".swiper-pagination",
-          clickable :true,
+          clickable: true
         }
+      },
+      onelist:[
+      {
+        num:"1",
+        name:"阿迪达斯官网UltraBOOST w女跑步运动鞋BB6149 BB6308",
+        thumb:"/goods-list/1.jpg",
+        price:"1299",
+        people:"1299",
+        post:"0.00",
       }
+      ]
     };
   },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
-    }
+    },
+    goodsList() {
+      return this.$store.state.goodsList;
+    },
   },
   mounted() {
     this.swiper.slideTo(1, 1000, true);
@@ -205,6 +246,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
   background-color: rgb(255, 0, 54);
 }
 .home-top-top-shell {
@@ -306,19 +348,39 @@ export default {
   /* border: 1px solid saddlebrown; */
 }
 
-.slide>a{
+.slide > a {
   display: block;
 }
-.slide>a>img{
+.slide > a > img {
   width: 100%;
   height: 100%;
 }
 
-
 /* 促销栏 */
 .home-promotion {
   height: 233px;
-  border: 1px solid skyblue;
+  /* border: 1px solid skyblue; */
+}
+
+.home-promotion-small {
+  display: inline-block;
+  width: 45.5%;
+  height: 48%;
+  border: 1px solid seagreen;
+  margin-left: 3%;
+}
+
+.home-sale {
+  background: url(//gw.alicdn.com/tfs/TB1pg6qwx9YBuNjy0FfXXXIsVXa-518-512.png?avatar=1_360x10000.jpg_.webp);
+  background-size: 147px 160px;
+}
+.home-goods {
+  background: url(//gw.alicdn.com/tfs/TB1Wy_6rYZnBKNjSZFrXXaRLFXa-345-257.png?getAvatar=1_360x10000.jpg_.webp);
+  background-size: 147px 110px;
+}
+.home-ju {
+  background: url(//gw.alicdn.com/tfs/TB1XWMYymzqK1RjSZFLXXcn2XXa-345-237.png?avatar=1_360x10000.jpg_.webp);
+  background-size: 147px 110px;
 }
 /* 底部 */
 .home-bottom-title {
