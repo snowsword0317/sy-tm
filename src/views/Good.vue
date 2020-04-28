@@ -333,7 +333,8 @@ export default {
           name : this.$route.query.name ,
           thumb : this.$route.query.thumb ,
           price : this.$route.query.price ,
-          per : 1
+          per : 1,
+          checked:false
         };
          this.$store.commit("pushCarList",goods)
       if(this.$router.meta == 3){

@@ -8,19 +8,24 @@
       </div>
       <div class="goods-car">
         <div class="shop-name">
-          <div class="iconfont red">&#xe798;</div>
-          <div>天猫旗舰店</div>
+          <div class="iconfont red">&#xe638;</div>
+          <div>TMALL</div>
           <div class="iconfont">&#xe61b;</div>
           <div>领券</div>
           <div @click="trans">编辑</div>
         </div>
         <div clss="car-list">
-          <div class="out-wrap goods" v-for="(item,index) in carList" :key="item.name" >
+          <div class="out-wrap goods" v-for="(item,index) in carList" :key="item.name">
             <div class="inner-wrap">
               <div class="show" :class="{trans:isTrans}">
                 <div>
-                  <input type="checkbox" name="convanse" id="convanse" />
-                  <label for="convanse"></label>
+                  <input
+                    type="checkbox"
+                    :id="item.name"
+                    :checked="item.checked"
+                    @change="checkMe(index)"
+                  />
+                  <label :for="item.name"></label>
                 </div>
                 <div>
                   <img :src="item.thumb" />
@@ -69,13 +74,13 @@
     </div>
     <div class="foot-fix">
       <div>
-        <input type="checkbox" name="checkall" id="checkall" />
-        <label for="checkall"></label>
+        <input type="checkbox" name="checkall" id="checkall2" @change="allCheck" />
+        <label for="checkall2"></label>
       </div>
       <div>全选</div>
       <div>
         合计:
-        <span>¥0.00</span>
+        <span>¥{{total}}</span>
       </div>
       <div>结算</div>
     </div>
@@ -91,43 +96,77 @@ export default {
       return this.$store.state.goodsList;
     },
 
-     carList() {
+    carList() {
       return this.$store.state.carList;
     },
 
     length() {
       return this.$store.state.carList.length;
+    },
+
+    total() {
+      var tot = 0;
+      for (let i = 0; i < this.carList.length; i++) {
+        if (this.carList[i].checked == true) {
+          tot = tot + this.carList[i].price * this.carList[i].per;
+        }
+      }
+      if (tot == 0) {
+        return 0.0;
+      } else {
+        return tot;
+      }
     }
   },
-  data(){
+  data() {
     return {
-      isTrans:false,
-      isIndex:false
-    }
+      isTrans: false,
+      isIndex: false
+    };
   },
   methods: {
     back() {
       this.$router.push("/");
     },
-    trans(){
-        if(this.isTrans){
-          this.isTrans = false
-          this.isIndex = false
-        }else{
-          this.isTrans = true
-           this.isIndex = true
+    trans() {
+      if (this.isTrans) {
+        this.isTrans = false;
+        this.isIndex = false;
+      } else {
+        this.isTrans = true;
+        this.isIndex = true;
+      }
+      console.log(123);
+    },
+    deleteGoods(index) {
+      this.$store.commit("deleteGoods", index);
+    },
+    plus(index) {
+      this.$store.commit("plus", index);
+    },
+    minus(index) {
+      this.$store.commit("minus", index);
+    },
+    allCheck(e) {
+      if (e.target.checked) {
+        for (let i = 0; i < this.carList.length; i++) {
+          this.carList[i].checked = true;
         }
-        console.log(123)
+      } else {
+        for (let i = 0; i < this.carList.length; i++) {
+          this.carList[i].checked = false;
+        }
+      }
     },
-    deleteGoods(index){
-       this.$store.commit("deleteGoods",index)
-    },
-    plus(index){
-       this.$store.commit("plus",index)
-    },
-    minus(index){
-       this.$store.commit("minus",index)
-    },
+    checkMe(index) {
+      // console.log(event)
+      if (event.target.checked) {
+        this.carList[index].checked = true;
+        console.log(this.carList);
+      } else {
+        this.carList[index].checked = false;
+      }
+    }
   }
 };
 </script>
@@ -180,7 +219,9 @@ a {
   justify-content: space-between;
   height: 40px;
   line-height: 40px;
+  position: relative;
 }
+
 .shop-name .red {
   color: #ff0036;
   margin-left: 32px;
@@ -224,10 +265,11 @@ a {
   display: flex;
   align-items: center;
   padding: 8px 0;
+  position: relative;
 }
-.trans{
+.trans {
   transform: translateX(-60px);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 .show input {
   width: 20px;
@@ -281,7 +323,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-   z-index: 20;
+  z-index: 20;
 }
 .mess {
   flex: 1;

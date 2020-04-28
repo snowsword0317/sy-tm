@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "215848",
+      "name": "天猫logo2",
+      "font_class": "tianmaologo2",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "688221",
+      "name": "天猫 tmall",
+      "font_class": "tianmaotmall",
+      "unicode": "e7c5",
+      "unicode_decimal": 59333
+    },
+    {
+      "icon_id": "833702",
+      "name": "天猫",
+      "font_class": "tianmao",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "12975027",
+      "name": "天猫",
+      "font_class": "tianmao1",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "1418223",
+      "name": "上下",
+      "font_class": "shangxia",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "11092057",
+      "name": "天猫-01",
+      "font_class": "tianmao-",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "12990750",
+      "name": "眼睛",
+      "font_class": "yanjing-",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "14230886",
+      "name": "眼睛-闭",
+      "font_class": "yanjing-bi-01",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
       "icon_id": "7501117",
       "name": "爱心线条",
       "font_class": "aixinxiantiao",

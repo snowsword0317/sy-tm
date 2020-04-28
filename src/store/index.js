@@ -12,7 +12,7 @@ export default new Vuex.Store({
         thumb:"/goods-list/1.jpg",
         price:"1299",
         people:"1299",
-        post:"0.00"
+        post:"0.00",
       },
       {
         num:"2",
@@ -106,7 +106,9 @@ export default new Vuex.Store({
       state.carList.splice(index,1)
     },
     minus(state,index){
-      state.carList[index].per--
+      if(state.carList[index].per>0){
+        state.carList[index].per--
+      }
     },
     plus(state,index){
       state.carList[index].per++

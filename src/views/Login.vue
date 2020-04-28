@@ -1,12 +1,12 @@
 <template>
   <div class="outer">
-    <div class="iconfont thumb">&#xe600;</div>
+    <div class="iconfont thumb">&#xe601;</div>
     <div class="login">
       <div class="input1">
         <input type="text" class="uname" placeholder="手机号/邮箱/会员名" />
       </div>
       <div class="input2">
-        <input type="text" class="pwd" placeholder="请输入登陆密码" />
+        <input type="password" class="pwd" placeholder="请输入登陆密码" />
       </div>
       <div class="mess-login">
         <div>短信验证码登陆</div>
@@ -45,7 +45,7 @@ export default {
   font-size: 60px;
   margin: 40px auto 40px;
   color: white;
-  background: -webkit-linear-gradient(60deg, #ff3306, rgb(250, 138, 113));
+  background:  #ff3306;
   height: 80px;
   width: 80px;
   padding: 10px;
@@ -91,7 +91,7 @@ button{
     line-height:45px;
     text-align: center;
     color:white;
-    background: -webkit-linear-gradient(0deg, rgb(250, 138, 113),#ff3306);
+    background:#ff3306;
     border-radius:23px;
     font-size:16px
 }
