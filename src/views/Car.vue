@@ -74,7 +74,7 @@
     </div>
     <div class="foot-fix">
       <div>
-        <input type="checkbox" name="checkall" id="checkall2" @change="allCheck" />
+        <input type="checkbox" name="checkall" id="checkall2" :checked="isCheck" @change="allCheck" />
         <label for="checkall2"></label>
       </div>
       <div>全选</div>
@@ -121,7 +121,8 @@ export default {
   data() {
     return {
       isTrans: false,
-      isIndex: false
+      isIndex: false,
+      isCheck: false
     };
   },
   methods: {
@@ -149,10 +150,12 @@ export default {
     },
     allCheck(e) {
       if (e.target.checked) {
+        this.isCheck = true;
         for (let i = 0; i < this.carList.length; i++) {
           this.carList[i].checked = true;
         }
       } else {
+        this.isCheck = false;
         for (let i = 0; i < this.carList.length; i++) {
           this.carList[i].checked = false;
         }
@@ -165,7 +168,15 @@ export default {
         console.log(this.carList);
       } else {
         this.carList[index].checked = false;
-      }
+      };
+      for (let i = 0; i < this.carList.length; i++) {
+          if(this.carList[i].checked == false){
+            return this.isCheck = false
+          }
+      };
+      this.isCheck = true;
+
+
     }
   }
 };

@@ -89,7 +89,9 @@ export default new Vuex.Store({
     ],
     carList:[],
     uname:"hahaha",
-    pwd:"123123"
+    pwd:"123123",
+    tell:13801987019,
+    tellPwd:456456
   },
   mutations: {
     pushCarList(state,goods){
