@@ -1,4 +1,4 @@
-let goodsList=[
+let goodsList2=[
     {
       num:"11",
       name:"lazy 阿迪达斯官网UltraBOOST w女跑步运动鞋BB6149 BB6308",
@@ -81,4 +81,4 @@ let goodsList=[
     },
   ]
 
-  export {goodsList}
+  export {goodsList2}

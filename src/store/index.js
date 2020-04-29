@@ -37,7 +37,8 @@ export default new Vuex.Store({
       state.carList[index].per++
     },
     lazy(state){
-      state.goodsList.concat(state.goodsList2)
+      console.log("lazy")
+      state.goodsList = state.goodsList.concat(state.goodsList2)
     }
   },
   actions: {

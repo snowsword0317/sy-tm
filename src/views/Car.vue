@@ -56,7 +56,7 @@
           <router-link
             :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price"
             v-for="item in goodsList"
-            :key="item.num"
+            :key="item.n"
           >
             <div class="goods-wrap">
               <div>
@@ -135,8 +135,9 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
       
-      if(scrollTop>=30){
-        console.log("hahaha");
+      if(scrollTop=838){
+        console.log("触发lazy")
+        this.$store.commit("lazy")
       }
     },
     back() {
