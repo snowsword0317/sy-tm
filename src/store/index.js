@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {goodsList} from "../components/good/goodsList.js"
-import {goodsList2} from "../components/good/goodsList2.js"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     goodsList:goodsList,
-    goodsList2:goodsList2,
     carList:[],
     uname:"hahaha",
     pwd:"123123",
@@ -15,6 +13,15 @@ export default new Vuex.Store({
     tellPwd:456456
   },
   mutations: {
+    loadGoods(state){
+      console.log("xixixi");
+      for(let i=0;i<state.goodsList.length;i++){
+        if(state.goodsList[i].isShow == false){
+          state.goodsList[i].isShow = true;
+          console.log(state.goodsList[i].isShow)
+        }
+      }
+    },
     pushCarList(state,goods){
       for(let i=0;i<state.carList.length;i++){
         if(state.carList[i].name == goods.name){

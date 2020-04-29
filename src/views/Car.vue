@@ -58,7 +58,7 @@
             v-for="item in goodsList"
             :key="item.n"
           >
-            <div class="goods-wrap">
+            <div class="goods-wrap"  v-if="item.isShow">
               <div>
                 <img :src="item.thumb" alt />
               </div>
@@ -135,6 +135,13 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
       console.log(scrollTop)
+      if(scrollTop>835){
+        let that = this
+       
+       setTimeout(function(){
+         that.$store.commit("loadGoods");
+       },800)
+      }
     },
     back() {
       this.$router.push("/");
