@@ -3,25 +3,14 @@
     <div class="top-search">
       <input type="text" v-model="searchInput" @keyup.enter="search" />
     </div>
-    <div class="search-in" v-for="(item, index) in tableList" :key="index">{{item.name}}</div>
+    <div class="middle-search">
+      <div class="search-in" v-for="(item, index) in tableList" :key="index">{{item.name}}</div>
+    </div>
   </div>
 </template>
 
 <script>
-let seachlist = [
-  {
-    id: 1,
-    name: "天猫精灵"
-  },
-  {
-    id: 2,
-    name: "天猫音响"
-  },
-  {
-    id: 3,
-    name: "天猫精灵"
-  }
-];
+import { seachlist } from "../components/search/search.js";
 
 export default {
   data() {
@@ -75,9 +64,16 @@ export default {
   width: 50%;
   overflow: hidden;
   box-sizing: border-box;
-  color: #999;
+  font-weight: 400;
+  color: #333;
+  font-size: 14px;
   white-space: nowrap;
   border-bottom: 1px solid #eee;
-      padding: .68em .6em;
+  padding: 0.68em 0.6em;
+}
+.middle-search {
+  width: 98%;
+  height: 100%;
+  padding: 0.6em 0.6em 0;
 }
 </style>

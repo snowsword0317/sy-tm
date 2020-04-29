@@ -21,7 +21,7 @@
           >
             <div class="home-top-list-img">
               <img
-                src="//gw.alicdn.com/tfs/TB1ISdWSFXXXXbFXXXXXXXXXXXX-146-147.png_110x10000.jpg_.webp"
+                src="//gw.alicdn.com/tfs/TB1ISdWSFXXXXbFXXXXXXXXXXXX-146-147.png_110x10000.jpg_.webp" style="align: center;"
               />
             </div>
             <p>苏宁易购</p>
@@ -119,8 +119,8 @@
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
-            <a href>
-              <img src alt />
+            <a href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4">
+              <img src="//gw.alicdn.com/imgextra/i4/1365007/O1CN01Djx5s51mrFhL2zQ4c_!!1365007-0-lubanu.jpg_790x10000Q75.jpg_.webp" alt />
             </a>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
@@ -128,7 +128,10 @@
       </div>
     </div>
     <div class="home-promotion">
-      <div class="home-promotion-small home-sale"></div>
+      <div class="home-promotion-small home-sale">
+        <div class="home-promontion-title"></div>
+        <div class="home-time"></div>
+      </div>
       <div class="home-promotion-small home-goods"></div>
       <div class="home-promotion-small home-ju"></div>
       <div class="home-promotion-small home-sale"></div>
@@ -136,7 +139,11 @@
     <div class="home-bottom-title">猜你喜欢</div>
     <ul class="home-bottom-goods">
       <li v-for="(item, index) in onelist" :key="index">
-        <router-link :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price">商品详情</router-link>
+        <router-link
+          :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price"
+        >
+          <div></div>
+        </router-link>
       </li>
       <li>
         <a
@@ -149,30 +156,12 @@
           />
         </a>
       </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
+      <li v-for="item in goodsList" :key="item.num">
+        <router-link
+          :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price"
+        >商品详情</router-link>
       </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
-      </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
-      </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
-      </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
-      </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
-      </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
-      </li>
-      <li>
-        <router-link to="/good">商品详情</router-link>
-      </li>
+      
     </ul>
   </div>
 </template>
@@ -180,6 +169,17 @@
 <script>
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
+
+let onelist =[
+  {
+    num:"1",
+    name:"2020短款春夏季七分袖外套小西装",
+    thumb:"/goods-list/2.jpg",
+    price:"99",
+    people:"699",
+    post:"0.00",
+  }
+];
 
 export default {
   components: {
@@ -203,16 +203,7 @@ export default {
           clickable: true
         }
       },
-      onelist:[
-      {
-        num:"1",
-        name:"阿迪达斯官网UltraBOOST w女跑步运动鞋BB6149 BB6308",
-        thumb:"/goods-list/1.jpg",
-        price:"1299",
-        people:"1299",
-        post:"0.00",
-      }
-      ]
+      onelist:onelist
     };
   },
   computed: {
@@ -255,28 +246,26 @@ export default {
 }
 .top-classify {
   display: inline-block;
-  width: 12%;
+  width: 35px;
   height: 100%;
   background: url(//gw.alicdn.com/tfs/TB17oY3qbGYBuNjy0FoXXciBFXa-564-62.png_620x10000.jpg_.webp)
     no-repeat;
   background-size: 256px 28px;
   background-position: 10px 5px;
   vertical-align: top;
+
 }
 .top-logo {
   display: inline-block;
-  width: 76%;
+  width: 80%;
   height: 100%;
   background: url(//gw.alicdn.com/tfs/TB1wQw8qamWBuNjy1XaXXXCbXXa-237-41.png_240x10000.jpg_.webp)
-    no-repeat;
+    no-repeat center;
   background-size: 101px 17px;
-  background-position: 70px 10px;
-  vertical-align: top;
 }
 .top-login {
   vertical-align: top;
   display: inline-block;
-  width: 12%;
   height: 100%;
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -316,7 +305,7 @@ export default {
 .home-top-list-img {
   width: 42px;
   height: 42px;
-  margin: 2px 9px 4px 9px;
+  margin: 2px auto 4px auto;
 }
 .home-top-list-img > img {
   width: 100%;
@@ -335,7 +324,6 @@ export default {
 /*轮播图  */
 .home-roll {
   height: 113px;
-  /* border: 1px solid skyblue; */
 }
 .roll-shell {
   width: 94%;
@@ -345,7 +333,6 @@ export default {
 .slide {
   width: 100%;
   height: 100px;
-  /* border: 1px solid saddlebrown; */
 }
 
 .slide > a {
@@ -354,6 +341,7 @@ export default {
 .slide > a > img {
   width: 100%;
   height: 100%;
+  max-height:100%;
 }
 
 /* 促销栏 */
@@ -371,16 +359,16 @@ export default {
 }
 
 .home-sale {
-  background: url(//gw.alicdn.com/tfs/TB1pg6qwx9YBuNjy0FfXXXIsVXa-518-512.png?avatar=1_360x10000.jpg_.webp);
-  background-size: 147px 160px;
+  background: url(//gw.alicdn.com/tfs/TB1pg6qwx9YBuNjy0FfXXXIsVXa-518-512.png?avatar=1_360x10000.jpg_.webp) no-repeat;
+  background-size: 100% 175%;
 }
 .home-goods {
-  background: url(//gw.alicdn.com/tfs/TB1Wy_6rYZnBKNjSZFrXXaRLFXa-345-257.png?getAvatar=1_360x10000.jpg_.webp);
-  background-size: 147px 110px;
+  background: url(//gw.alicdn.com/tfs/TB1Wy_6rYZnBKNjSZFrXXaRLFXa-345-257.png?getAvatar=1_360x10000.jpg_.webp) no-repeat;
+  background-size: 100% 100%;
 }
 .home-ju {
-  background: url(//gw.alicdn.com/tfs/TB1XWMYymzqK1RjSZFLXXcn2XXa-345-237.png?avatar=1_360x10000.jpg_.webp);
-  background-size: 147px 110px;
+  background: url(//gw.alicdn.com/tfs/TB1XWMYymzqK1RjSZFLXXcn2XXa-345-237.png?avatar=1_360x10000.jpg_.webp) no-repeat;
+  background-size: 100% 100%;
 }
 /* 底部 */
 .home-bottom-title {
