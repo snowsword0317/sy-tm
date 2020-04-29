@@ -134,11 +134,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      
-      if(scrollTop=838){
-        console.log("触发lazy")
-        this.$store.commit("lazy")
-      }
+      console.log(scrollTop)
     },
     back() {
       this.$router.push("/");
