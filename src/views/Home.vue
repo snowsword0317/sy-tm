@@ -16,49 +16,33 @@
     <div class="home-second-top">
       <ul class="home-top-list">
         <li>
-          <a
-            href="https://suning.tmall.com/?pos=1&acm=201704071.1003.64.1699747&scm=1003.64.201704071.OTHER_1547149173937_1699747&spm=a211ue.11501597.icon.1"
-          >
+          <a href="https://suning.tmall.com/?pos=1&acm=201704071.1003.64.1699747&scm=1003.64.201704071.OTHER_1547149173937_1699747&spm=a211ue.11501597.icon.1">
             <div class="home-top-list-img">
-              <img
-                src="//gw.alicdn.com/tfs/TB1ISdWSFXXXXbFXXXXXXXXXXXX-146-147.png_110x10000.jpg_.webp" style="align: center;"
-              />
+              <img src="/home/classify/1.jpg" style="align: center;" />
             </div>
             <p>苏宁易购</p>
           </a>
         </li>
         <li>
-          <a
-            href="https://chaoshi.m.tmall.com/?pos=2&acm=201704071.1003.64.1699747&_ig=shoumao&scm=1003.64.201704071.OTHER_1545931209467_1699747&spm=a211ue.11501597.icon.2"
-          >
+          <a href="https://chaoshi.m.tmall.com/?pos=2&acm=201704071.1003.64.1699747&_ig=shoumao&scm=1003.64.201704071.OTHER_1545931209467_1699747&spm=a211ue.11501597.icon.2">
             <div class="home-top-list-img">
-              <img
-                src="//gw.alicdn.com/tfs/TB1wSoFa5qAXuNjy1XdXXaYcVXa-196-196.png?avatar=1_110x10000.jpg_.webp"
-              />
+              <img src="/home/classify/2.png" />
             </div>
             <p>天猫超市</p>
           </a>
         </li>
         <li>
-          <a
-            href="https://pages.tmall.com/wow/jinkou/act/zhiying?wh_from=icon&pos=3&acm=201704071.1003.64.1699747&scm=1003.64.201704071.OTHER_1547673722287_1699747&spm=a211ue.11501597.icon.3"
-          >
+          <a href="https://pages.tmall.com/wow/jinkou/act/zhiying?wh_from=icon&pos=3&acm=201704071.1003.64.1699747&scm=1003.64.201704071.OTHER_1547673722287_1699747&spm=a211ue.11501597.icon.3">
             <div class="home-top-list-img">
-              <img
-                src="//gw.alicdn.com/tfs/TB1Jc0fSFXXXXXTapXXXXXXXXXX-146-147.png_110x10000.jpg_.webp"
-              />
+              <img src="/home/classify/3.jpg" />
             </div>
             <p>天猫国际</p>
           </a>
         </li>
         <li>
-          <a
-            href="https://tb.cn/x/ju?pos=4&acm=201704071.1003.64.1699747&scm=1003.64.201704071.OTHER_1547844648097_1699747&spm=a211ue.11501597.icon.4"
-          >
+          <a href="https://tb.cn/x/ju?pos=4&acm=201704071.1003.64.1699747&scm=1003.64.201704071.OTHER_1547844648097_1699747&spm=a211ue.11501597.icon.4">
             <div class="home-top-list-img">
-              <img
-                src="//gw.alicdn.com/tfs/TB15lhOSFXXXXaKXpXXXXXXXXXX-147-147.png_110x10000.jpg_.webp"
-              />
+              <img src="/home/classify/4.jpg" />
             </div>
             <p>聚划算</p>
           </a>
@@ -66,9 +50,7 @@
         <li>
           <router-link to="/classify">
             <div class="home-top-list-img">
-              <img
-                src="//gw.alicdn.com/tfs/TB12CFXSFXXXXcpapXXXXXXXXXX-146-147.png_110x10000.jpg_.webp"
-              />
+              <img src="/home/classify/5.jpg" />
             </div>
             <p>分类</p>
           </router-link>
@@ -79,48 +61,28 @@
       <div class="roll-shell">
         <swiper ref="mySwiper" :options="swiperOptions">
           <swiper-slide class="slide">
-            <a
-              href="https://pages.tmall.com/wow/mit/act/download?mmstat=tb_homepagejiao&src=tb_homepage&pos=1&acm=201810194.1003.2.7697690&scm=1003.2.201810194.OTHER_1587988720254_7697690&firstModule=7&spm=a211ue.11501597.banner.1"
-            >
-              <img
-                src="//gw.alicdn.com/tfs/TB17emto4n1gK0jSZKPXXXvUXXa-1035-390.png_790x10000.jpg_.webp"
-                alt
-              />
+            <a href="https://pages.tmall.com/wow/mit/act/download?mmstat=tb_homepagejiao&src=tb_homepage&pos=1&acm=201810194.1003.2.7697690&scm=1003.2.201810194.OTHER_1587988720254_7697690&firstModule=7&spm=a211ue.11501597.banner.1">
+              <img src="/home/roll/1.jpg" alt />
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
-            <a
-              href="https://shop491733054.m.taobao.com?pos=1&acm=&scm=1049.lyg_turing_-1_335.146383.146383-THJH_215488&spm=a211ue.11501597.banner.2"
-            >
-              <img
-                src="//gw.alicdn.com/tps/i4/TB1NBFzCVY7gK0jSZKzSuuikpXa.jpg_790x10000Q75.jpg_.webp"
-                alt
-              />
+            <a href="https://shop491733054.m.taobao.com?pos=1&acm=&scm=1049.lyg_turing_-1_335.146383.146383-THJH_215488&spm=a211ue.11501597.banner.2">
+              <img src="/home/roll/2.jpg" alt />
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
-            <a
-              href="https://haier.tmall.com/shop/view_shop.htm?mytmenu=mdianpu&user_number_id=470168984&utkn=g,xkr3n65z3g333rxmxwrll2q1585880124865&pos=1&acm=&scm=1049.lyg_turing_-1_124.145284.145284-THJH_213897&spm=a211ue.11501597.banner.3"
-            >
-              <img
-                src="//gw.alicdn.com/tps/i4/TB1if9eAKL2gK0jSZPhSuuhvXXa.jpg_790x10000Q75.jpg_.webp"
-                alt
-              />
-            </a>
-          </swiper-slide>
-          <swiper-slide class="slide">
-            <a
-              href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4"
-            >
-              <img
-                src="//gw.alicdn.com/tfs/TB1RmWvDND1gK0jSZFKXXcJrVXa-1035-390.jpg_790x10000Q75.jpg_.webp"
-                alt
-              />
+            <a href="https://haier.tmall.com/shop/view_shop.htm?mytmenu=mdianpu&user_number_id=470168984&utkn=g,xkr3n65z3g333rxmxwrll2q1585880124865&pos=1&acm=&scm=1049.lyg_turing_-1_124.145284.145284-THJH_213897&spm=a211ue.11501597.banner.3">
+              <img src="/home/roll/3.jpg" alt />
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4">
-              <img src="//gw.alicdn.com/imgextra/i4/1365007/O1CN01Djx5s51mrFhL2zQ4c_!!1365007-0-lubanu.jpg_790x10000Q75.jpg_.webp" alt />
+              <img src="/home/roll/4.jpg" alt />
+            </a>
+          </swiper-slide>
+          <swiper-slide class="slide">
+            <a href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4">
+              <img src="/home/roll/5.jpg" alt />
             </a>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
@@ -139,29 +101,34 @@
     <div class="home-bottom-title">猜你喜欢</div>
     <ul class="home-bottom-goods">
       <li v-for="(item, index) in onelist" :key="index">
-        <router-link
-          :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price"
-        >
-          <div></div>
+        <router-link class="home-bottom-goods-link" :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price">
+          <div class="home-bottom-goods-img">
+            <img :src="item.thumb" alt />
+          </div>
+          <div class="home-bottom-goods-brand">{{item.brand}}</div>
+          <div class="home-bottom-goods-name">{{item.name}}</div>
+          <div class="home-bottom-goods-sale">{{item.sale}}</div>
+          <div class="home-bottom-goods-price">￥{{item.price}}</div>
+          <div class="home-bottom-goods-btn">看相似</div>
         </router-link>
       </li>
       <li>
-        <a
-          href="https://pages.tmall.com/wow/mit/act/download?firstModule=3&mmstat=tb_homepageprice&src=tb_homepageprice&spm=a211ue.11501597.new-recommend.dingkeng"
-        >
-          <img
-            src="//gw.alicdn.com/tfs/TB1FRVUPAvoK1RjSZFwXXciCFXa-344-540.png_360x10000.jpg_.webp"
-            alt
-            class="redbag"
-          />
+        <a href="https://pages.tmall.com/wow/mit/act/download?firstModule=3&mmstat=tb_homepageprice&src=tb_homepageprice&spm=a211ue.11501597.new-recommend.dingkeng">
+          <img src="//gw.alicdn.com/tfs/TB1FRVUPAvoK1RjSZFwXXciCFXa-344-540.png_360x10000.jpg_.webp" alt class="redbag" />
         </a>
       </li>
       <li v-for="item in goodsList" :key="item.num">
-        <router-link
-          :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price"
-        >商品详情</router-link>
+        <router-link class="home-bottom-goods-link" :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price">
+          <div class="home-bottom-goods-img">
+            <img :src="item.thumb" alt />
+          </div>
+          <div class="home-bottom-goods-brand">{{item.brand}}</div>
+          <div class="home-bottom-goods-name">{{item.name}}</div>
+          <div class="home-bottom-goods-sale">{{item.sale}}</div>
+          <div class="home-bottom-goods-price">￥{{item.price}}</div>
+          <div class="home-bottom-goods-btn">看相似</div>
+        </router-link>
       </li>
-      
     </ul>
   </div>
 </template>
@@ -169,17 +136,7 @@
 <script>
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
-
-let onelist =[
-  {
-    num:"1",
-    name:"2020短款春夏季七分袖外套小西装",
-    thumb:"/goods-list/2.jpg",
-    price:"99",
-    people:"699",
-    post:"0.00",
-  }
-];
+import { onelist } from "../components/home/onelist.js";
 
 export default {
   components: {
@@ -203,7 +160,7 @@ export default {
           clickable: true
         }
       },
-      onelist:onelist
+      onelist: onelist
     };
   },
   computed: {
@@ -212,7 +169,7 @@ export default {
     },
     goodsList() {
       return this.$store.state.goodsList;
-    },
+    }
   },
   mounted() {
     this.swiper.slideTo(1, 1000, true);
@@ -253,7 +210,6 @@ export default {
   background-size: 256px 28px;
   background-position: 10px 5px;
   vertical-align: top;
-
 }
 .top-logo {
   display: inline-block;
@@ -341,7 +297,7 @@ export default {
 .slide > a > img {
   width: 100%;
   height: 100%;
-  max-height:100%;
+  max-height: 100%;
 }
 
 /* 促销栏 */
@@ -359,15 +315,18 @@ export default {
 }
 
 .home-sale {
-  background: url(//gw.alicdn.com/tfs/TB1pg6qwx9YBuNjy0FfXXXIsVXa-518-512.png?avatar=1_360x10000.jpg_.webp) no-repeat;
+  background: url(//gw.alicdn.com/tfs/TB1pg6qwx9YBuNjy0FfXXXIsVXa-518-512.png?avatar=1_360x10000.jpg_.webp)
+    no-repeat;
   background-size: 100% 175%;
 }
 .home-goods {
-  background: url(//gw.alicdn.com/tfs/TB1Wy_6rYZnBKNjSZFrXXaRLFXa-345-257.png?getAvatar=1_360x10000.jpg_.webp) no-repeat;
+  background: url(//gw.alicdn.com/tfs/TB1Wy_6rYZnBKNjSZFrXXaRLFXa-345-257.png?getAvatar=1_360x10000.jpg_.webp)
+    no-repeat;
   background-size: 100% 100%;
 }
 .home-ju {
-  background: url(//gw.alicdn.com/tfs/TB1XWMYymzqK1RjSZFLXXcn2XXa-345-237.png?avatar=1_360x10000.jpg_.webp) no-repeat;
+  background: url(//gw.alicdn.com/tfs/TB1XWMYymzqK1RjSZFLXXcn2XXa-345-237.png?avatar=1_360x10000.jpg_.webp)
+    no-repeat;
   background-size: 100% 100%;
 }
 /* 底部 */
@@ -381,17 +340,84 @@ export default {
 }
 .home-bottom-goods {
   display: grid;
+  box-sizing: border-box;
   grid-template-columns: 49.5% 49.5%;
   list-style-type: none;
+
   background: url(//gw.alicdn.com/tfs/TB1Pq4.x9zqK1RjSZPcXXbTepXa-750-294.png_790x10000.jpg_.webp)
     no-repeat;
   background-size: 100% 125px;
 }
 .home-bottom-goods > li {
   height: 228px;
-  margin: 5px 5px;
-  border: 1px solid salmon;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  font-size: 11.9467px;
+
+  border: 0.853333px solid rgb(237, 237, 237);
+  background-color: white;
 }
+.home-bottom-goods-link {
+  text-decoration: none;
+}
+.home-bottom-goods-img {
+  width: 117.75px;
+  height: 117.75px;
+  margin: 10px auto 5px auto;
+}
+.home-bottom-goods-img > img {
+  width: 100%;
+  height: 100%;
+}
+.home-bottom-goods-brand {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(205, 163, 177);
+  color: white;
+}
+.home-bottom-goods-name {
+  width: 85%;
+  height: 31px;
+  margin: 1px auto 3px auto;
+  color: rgb(62, 62, 62);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.home-bottom-goods-sale {
+  margin-left: 8%;
+  margin-bottom: 2px;
+  width: 30%;
+  color: rgb(255, 0, 54);
+  border: 1px solid rgb(255, 0, 54);
+  font-size: 9.38667px;
+  height: 11.0933px;
+  line-height: 11.0933px;
+}
+.home-bottom-goods-price {
+  margin-left: 8%;
+  color: rgb(255, 0, 0);
+  display: inline-block;
+  font-size: 13.6533px;
+  font-weight: 600;
+  line-height: 23.8933px;
+}
+.home-bottom-goods-btn {
+  float: right;
+  /* display: inline-block; */
+  background-color: rgb(255, 230, 235);
+  width: 35%;
+  border-radius: 10px;
+  color: rgb(255, 0, 54);
+  font-size: 9.38667px;
+  height: 19.6267px;
+  text-align: center;
+  margin-right: 5%;
+}
+
 .redbag {
   width: 100%;
   height: 100%;
