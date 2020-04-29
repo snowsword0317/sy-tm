@@ -56,9 +56,9 @@
           <router-link
             :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price"
             v-for="item in goodsList"
-            :key="item.num"
+            :key="item.n"
           >
-            <div class="goods-wrap">
+            <div class="goods-wrap"  v-if="item.isShow">
               <div>
                 <img :src="item.thumb" alt />
               </div>
@@ -74,7 +74,7 @@
     </div>
     <div class="foot-fix">
       <div>
-        <input type="checkbox" name="checkall" id="checkall2" @change="allCheck" />
+        <input type="checkbox" name="checkall" id="checkall2" :checked="isCheck" @change="allCheck" />
         <label for="checkall2"></label>
       </div>
       <div>全选</div>
@@ -112,19 +112,37 @@ export default {
         }
       }
       if (tot == 0) {
-        return 0.0;
+        return 0.00;
       } else {
-        return tot;
+        return tot
       }
     }
   },
   data() {
     return {
       isTrans: false,
-      isIndex: false
+      isIndex: false,
+      isCheck: false
     };
   },
+  mounted(){
+    window.addEventListener("scroll", this.handleScroll);
+  },
   methods: {
+    handleScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      console.log(scrollTop)
+      if(scrollTop>835){
+        let that = this
+       
+       setTimeout(function(){
+         that.$store.commit("loadGoods");
+       },800)
+      }
+    },
     back() {
       this.$router.push("/");
     },
@@ -149,10 +167,12 @@ export default {
     },
     allCheck(e) {
       if (e.target.checked) {
+        this.isCheck = true;
         for (let i = 0; i < this.carList.length; i++) {
           this.carList[i].checked = true;
         }
       } else {
+        this.isCheck = false;
         for (let i = 0; i < this.carList.length; i++) {
           this.carList[i].checked = false;
         }
@@ -166,6 +186,12 @@ export default {
       } else {
         this.carList[index].checked = false;
       }
+      for (let i = 0; i < this.carList.length; i++) {
+        if (this.carList[i].checked == false) {
+          return (this.isCheck = false);
+        }
+      }
+      this.isCheck = true;
     }
   }
 };
@@ -394,18 +420,36 @@ a {
   flex-wrap: wrap;
   margin-bottom: 47px;
 }
-.goods-wrap {
-  width: 170px;
-  height: 260px;
-  border-radius: 5px;
-  overflow: hidden;
-  flex-shrink: 0;
+@media screen and (max-width: 325px) {
+  .goods-wrap {
+    width: 140px;
+    height: 260px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* background: red; */
+  }
+  .goods-wrap img {
+    width: 140px;
+    height: 170px;
+    margin-bottom: 5px;
+  }
 }
-.goods-wrap img {
-  width: 170px;
-  height: 170px;
-  margin-bottom: 5px;
+@media screen and (min-width: 325px) {
+  .goods-wrap {
+    width: 170px;
+    height: 260px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .goods-wrap img {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 5px;
+  }
 }
+
 .goods-wrap div:nth-child(2) {
   font-size: 12px;
   color: #333;

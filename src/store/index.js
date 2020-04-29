@@ -8,9 +8,20 @@ export default new Vuex.Store({
     goodsList:goodsList,
     carList:[],
     uname:"hahaha",
-    pwd:"123123"
+    pwd:"123123",
+    tell:13801987019,
+    tellPwd:456456
   },
   mutations: {
+    loadGoods(state){
+      console.log("xixixi");
+      for(let i=0;i<state.goodsList.length;i++){
+        if(state.goodsList[i].isShow == false){
+          state.goodsList[i].isShow = true;
+          console.log(state.goodsList[i].isShow)
+        }
+      }
+    },
     pushCarList(state,goods){
       for(let i=0;i<state.carList.length;i++){
         if(state.carList[i].name == goods.name){
