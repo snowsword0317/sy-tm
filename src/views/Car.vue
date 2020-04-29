@@ -112,9 +112,9 @@ export default {
         }
       }
       if (tot == 0) {
-        return 0.0;
+        return 0.00;
       } else {
-        return tot;
+        return tot
       }
     }
   },
@@ -168,15 +168,13 @@ export default {
         console.log(this.carList);
       } else {
         this.carList[index].checked = false;
-      };
+      }
       for (let i = 0; i < this.carList.length; i++) {
-          if(this.carList[i].checked == false){
-            return this.isCheck = false
-          }
-      };
+        if (this.carList[i].checked == false) {
+          return (this.isCheck = false);
+        }
+      }
       this.isCheck = true;
-
-
     }
   }
 };
@@ -405,18 +403,36 @@ a {
   flex-wrap: wrap;
   margin-bottom: 47px;
 }
-.goods-wrap {
-  width: 170px;
-  height: 260px;
-  border-radius: 5px;
-  overflow: hidden;
-  flex-shrink: 0;
+@media screen and (max-width: 325px) {
+  .goods-wrap {
+    width: 140px;
+    height: 260px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* background: red; */
+  }
+  .goods-wrap img {
+    width: 140px;
+    height: 170px;
+    margin-bottom: 5px;
+  }
 }
-.goods-wrap img {
-  width: 170px;
-  height: 170px;
-  margin-bottom: 5px;
+@media screen and (min-width: 325px) {
+  .goods-wrap {
+    width: 170px;
+    height: 260px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .goods-wrap img {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 5px;
+  }
 }
+
 .goods-wrap div:nth-child(2) {
   font-size: 12px;
   color: #333;
