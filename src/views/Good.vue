@@ -294,7 +294,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      // console.log(scrollTop);
+      console.log(scrollTop);
       if (scrollTop > 30) {
         this.opacity = false;
       } else {

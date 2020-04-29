@@ -125,7 +125,20 @@ export default {
       isCheck: false
     };
   },
+  mounted(){
+    window.addEventListener("scroll", this.handleScroll);
+  },
   methods: {
+    handleScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      
+      if(scrollTop>=30){
+        console.log("hahaha");
+      }
+    },
     back() {
       this.$router.push("/");
     },
