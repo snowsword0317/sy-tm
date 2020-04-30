@@ -144,7 +144,7 @@ export default {
       }
     },
     back() {
-      this.$router.push("/");
+      this.$router.push("/homelogin");
     },
     trans() {
       if (this.isTrans) {

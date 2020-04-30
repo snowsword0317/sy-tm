@@ -7,6 +7,7 @@ import Login from '../views/Login.vue'
 import Login2 from '../views/Login2.vue'
 import Car from '../views/Car.vue'
 import Search from '../views/Search.vue'
+import HomeLogin from '../views/HomeLogin.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,10 @@ Vue.use(VueRouter)
   {
     path:'/search',
     component:Search
+  },
+  {
+    path:'/homelogin',
+    component:HomeLogin
   }
 ]
 
