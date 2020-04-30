@@ -7,10 +7,9 @@
         <router-link to="/login" class="top-login">登录</router-link>
       </div>
       <router-link to="/search" class="top-search">
-        <input type="text" />
+        <input type="text" placeholder="搜索商品，品牌" />
         <!-- todo:补充动画和input内容 -->
-        <div></div>
-        <div></div>
+        <div class="top-search-img"></div>
       </router-link>
     </div>
     <div class="home-second-top">
@@ -91,12 +90,78 @@
     </div>
     <div class="home-promotion">
       <div class="home-promotion-small home-sale">
-        <div class="home-promontion-title"></div>
-        <div class="home-time"></div>
+        <div class="home-promontion-title">限时抢购</div>
+        <div class="home-time">
+          <span>00</span>:
+          <span>00</span>:
+          <span>00</span>
+        </div>
+        <div class="home-promontion-in-shell">
+          <div class="home-promontion-in-one">
+            <a href="https://jupage.taobao.com/wow/tqg/act/tqgtmallhome?wh_weex=true&wh_biz=tm&wx_navbar_transparent=true&topJuIds=10001021484493,10001007791869&wx_navbar_hidden=true&wx_navbar_transparent=true&disableNav=YES&spm=a211ue.11501597.flash_sale.1">
+              <img src="/home/promontion/1.jpg" />
+              <span>实属好货</span>
+            </a>
+          </div>
+          <div class="home-promontion-in-two">
+            <a href="https://jupage.taobao.com/wow/tqg/act/tqgtmallhome?wh_weex=true&wh_biz=tm&wx_navbar_transparent=true&topJuIds=10001021484493,10001007791869&wx_navbar_hidden=true&wx_navbar_transparent=true&disableNav=YES&spm=a211ue.11501597.flash_sale.1">
+              <img src="/home/promontion/2.jpg" />
+              <span>限时特价</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="home-promotion-small home-goods"></div>
-      <div class="home-promotion-small home-ju"></div>
-      <div class="home-promotion-small home-sale"></div>
+      <div class="home-promotion-small home-goods">
+        <div class="home-promontion-title">天猫好物</div>
+        <div class="home-promontion-in-shell">
+          <div class="home-promontion-in-one">
+            <a href="https://jupage.taobao.com/wow/tqg/act/tqgtmallhome?wh_weex=true&wh_biz=tm&wx_navbar_transparent=true&topJuIds=10001021484493,10001007791869&wx_navbar_hidden=true&wx_navbar_transparent=true&disableNav=YES&spm=a211ue.11501597.flash_sale.1">
+              <img src="/home/promontion/3.jpg" />
+              <span>时髦设计</span>
+            </a>
+          </div>
+          <div class="home-promontion-in-two">
+            <a href="https://jupage.taobao.com/wow/tqg/act/tqgtmallhome?wh_weex=true&wh_biz=tm&wx_navbar_transparent=true&topJuIds=10001021484493,10001007791869&wx_navbar_hidden=true&wx_navbar_transparent=true&disableNav=YES&spm=a211ue.11501597.flash_sale.1">
+              <img src="/home/promontion/4.jpg" />
+              <span>半身裙</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="home-promotion-small home-ju">
+        <div class="home-promontion-title">聚划算</div>
+        <div class="home-promontion-in-shell">
+          <div class="home-promontion-in-one">
+            <a href="#">
+              <img src="/home/promontion/5.jpg" />
+              <span>满199元减免</span>
+            </a>
+          </div>
+          <div class="home-promontion-in-two">
+            <a href="#">
+              <img src="/home/promontion/6.jpg" />
+              <span>抢100元券</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="home-promotion-small home-sale">
+        <div class="home-promontion-title">天猫闪降</div>
+        <div class="home-promontion-in-shell">
+          <div class="home-promontion-in-one">
+            <a href="#">
+              <img src="/home/promontion/7.jpg" />
+              <span>人气爆款</span>
+            </a>
+          </div>
+          <div class="home-promontion-in-two">
+            <a href="#">
+              <img src="/home/promontion/8.jpg" />
+              <span>降价好货</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="home-bottom-title">猜你喜欢</div>
     <ul class="home-bottom-goods">
@@ -213,7 +278,7 @@ export default {
 }
 .top-logo {
   display: inline-block;
-  width: 80%;
+  width: 79%;
   height: 100%;
   background: url(//gw.alicdn.com/tfs/TB1wQw8qamWBuNjy1XaXXXCbXXa-237-41.png_240x10000.jpg_.webp)
     no-repeat center;
@@ -221,7 +286,8 @@ export default {
 }
 .top-login {
   vertical-align: top;
-  display: inline-block;
+  float: right;
+  margin-right: 2%;
   height: 100%;
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -234,6 +300,7 @@ export default {
   display: block;
   width: 100%;
   height: 39px;
+  position: relative;
 }
 .top-search > input {
   width: 95%;
@@ -241,6 +308,19 @@ export default {
   margin-left: 2.5%;
   border-radius: 5px;
   border: 1px transparent;
+  padding-left: 10%;
+  color: rgba(0, 0, 0, 0.3);
+}
+.top-search-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35px;
+  height: 100%;
+  background: url(//gw.alicdn.com/tfs/TB17oY3qbGYBuNjy0FoXXciBFXa-564-62.png_620x10000.jpg_.webp)
+    no-repeat;
+  background-size: 256px 28px;
+  background-position: -59px 3px;
 }
 
 /* 次级选择栏 */
@@ -310,8 +390,9 @@ export default {
   display: inline-block;
   width: 45.5%;
   height: 48%;
-  border: 1px solid seagreen;
   margin-left: 3%;
+  margin-bottom: 2%;
+  vertical-align: top;
 }
 
 .home-sale {
@@ -329,6 +410,77 @@ export default {
     no-repeat;
   background-size: 100% 100%;
 }
+.home-promontion-title {
+  font-size: 13.6533px;
+  color: rgb(32, 32, 32);
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 13px;
+  margin-left: 5%;
+}
+.home-time {
+  margin-left: 8%;
+  display: inline-block;
+  font-size: 11.0933px;
+}
+.home-time > span {
+  background-color: rgb(0, 0, 0);
+  font-size: 11.0933px;
+  color: white;
+  border-radius: 3px;
+}
+.home-promontion-in-shell {
+  width: 92%;
+  height: 65%;
+  margin-left: 4%;
+}
+.home-promontion-in-one,
+.home-promontion-in-two {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.home-promontion-in-one > a > img {
+  width: 100%;
+  height: 100%;
+}
+.home-promontion-in-one > a > span {
+  display: inline-block;
+  height: 10.24px;
+  line-height: 9.38667px;
+  position: absolute;
+  left: 10%;
+  top: 80%;
+  color: rgb(255, 0, 54);
+  font-size: 8.53333px;
+  background-color: rgb(255, 237, 241);
+  max-width: 66.1333px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.home-promontion-in-two > a > img {
+  width: 100%;
+  height: 100%;
+}
+.home-promontion-in-two > a > span {
+  display: inline-block;
+  height: 10.24px;
+  line-height: 9.38667px;
+  position: absolute;
+  left: 10%;
+  top: 80%;
+  color: rgb(255, 0, 54);
+  font-size: 8.53333px;
+  background-color: rgb(255, 237, 241);
+  max-width: 66.1333px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 /* 底部 */
 .home-bottom-title {
   height: 34px;
