@@ -4,7 +4,7 @@
       <div class="home-top-top-shell">
         <router-link to="/classify" class="top-classify"></router-link>
         <div class="top-logo"></div>
-        <div class="top-login" @click="tab(1)"></div>
+        <div class="top-login-in" @click="tab(1)"></div>
       </div>
       <router-link to="/search" class="top-search">
         <input type="text" placeholder="搜索商品，品牌" />
@@ -61,27 +61,27 @@
         <swiper ref="mySwiper" :options="swiperOptions">
           <swiper-slide class="slide">
             <a href="https://pages.tmall.com/wow/mit/act/download?mmstat=tb_homepagejiao&src=tb_homepage&pos=1&acm=201810194.1003.2.7697690&scm=1003.2.201810194.OTHER_1587988720254_7697690&firstModule=7&spm=a211ue.11501597.banner.1">
-              <img src="/home/roll/1.jpg" alt />
+              <img src="/home/roll/1.jpg"/>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a href="https://shop491733054.m.taobao.com?pos=1&acm=&scm=1049.lyg_turing_-1_335.146383.146383-THJH_215488&spm=a211ue.11501597.banner.2">
-              <img src="/home/roll/2.jpg" alt />
+              <img src="/home/roll/2.jpg"/>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a href="https://haier.tmall.com/shop/view_shop.htm?mytmenu=mdianpu&user_number_id=470168984&utkn=g,xkr3n65z3g333rxmxwrll2q1585880124865&pos=1&acm=&scm=1049.lyg_turing_-1_124.145284.145284-THJH_213897&spm=a211ue.11501597.banner.3">
-              <img src="/home/roll/3.jpg" alt />
+              <img src="/home/roll/3.jpg"/>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4">
-              <img src="/home/roll/4.jpg" alt />
+              <img src="/home/roll/4.jpg"/>
             </a>
           </swiper-slide>
           <swiper-slide class="slide">
             <a href="https://pages.tmall.com/wow/a/act/tmall/dailygroup/1116/wupr?pos=1&wh_pid=daily-191884&acm=2017041213-1.1003.2.7704661&scm=1003.2.2017041213-1.OTHER_1589836459808_7704661&spm=a211ue.11501597.banner.4">
-              <img src="/home/roll/5.jpg" alt />
+              <img src="/home/roll/5.jpg"/>
             </a>
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
@@ -168,7 +168,7 @@
       <li v-for="(item, index) in onelist" :key="index">
         <router-link class="home-bottom-goods-link" :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price">
           <div class="home-bottom-goods-img">
-            <img :src="item.thumb" alt />
+            <img :src="item.thumb"/>
           </div>
           <div class="home-bottom-goods-brand">{{item.brand}}</div>
           <div class="home-bottom-goods-name">{{item.name}}</div>
@@ -179,13 +179,13 @@
       </li>
       <li>
         <a href="https://pages.tmall.com/wow/mit/act/download?firstModule=3&mmstat=tb_homepageprice&src=tb_homepageprice&spm=a211ue.11501597.new-recommend.dingkeng">
-          <img src="//gw.alicdn.com/tfs/TB1FRVUPAvoK1RjSZFwXXciCFXa-344-540.png_360x10000.jpg_.webp" alt class="redbag" />
+          <img src="/home/goods/redbag.jpg" class="redbag" />
         </a>
       </li>
       <li v-for="item in goodsList" :key="item.num">
         <router-link class="home-bottom-goods-link" :to="'/good?name='+item.name+'&thumb='+item.thumb+'&people='+item.people+'&post='+item.post+'&price='+item.price">
           <div class="home-bottom-goods-img">
-            <img :src="item.thumb" alt />
+            <img :src="item.thumb"/>
           </div>
           <div class="home-bottom-goods-brand">{{item.brand}}</div>
           <div class="home-bottom-goods-name">{{item.name}}</div>
@@ -212,7 +212,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    "user":user,
+    user: user
   },
   directives: {
     swiper: directive
@@ -238,7 +238,7 @@ export default {
       sec: 0,
       tabname: "user",
       pageindex: 1,
-      showtab:false
+      showtab: false
     };
   },
   computed: {
@@ -317,7 +317,7 @@ export default {
       this.pageindex = index;
       if ((index = 1)) {
         this.tabname = "user";
-        this.showtab=true
+        this.showtab = true;
       }
     }
   }
@@ -352,8 +352,7 @@ export default {
   display: inline-block;
   width: 35px;
   height: 100%;
-  background: url(//gw.alicdn.com/tfs/TB17oY3qbGYBuNjy0FoXXciBFXa-564-62.png_620x10000.jpg_.webp)
-    no-repeat;
+  background: url(/home/top/2.jpg) no-repeat;
   background-size: 256px 28px;
   background-position: 10px 5px;
   vertical-align: top;
@@ -362,18 +361,16 @@ export default {
   display: inline-block;
   width: 79%;
   height: 100%;
-  background: url(//gw.alicdn.com/tfs/TB1wQw8qamWBuNjy1XaXXXCbXXa-237-41.png_240x10000.jpg_.webp)
-    no-repeat center;
+  background: url(/home/top/3.jpg) no-repeat center;
   background-size: 101px 17px;
 }
-.top-login {
+.top-login-in {
   vertical-align: top;
   float: right;
   width: 8%;
   margin-right: 2%;
   height: 100%;
-  background: url(//gw.alicdn.com/tfs/TB17oY3qbGYBuNjy0FoXXciBFXa-564-62.png_620x10000.jpg_.webp)
-    no-repeat;
+  background: url(/home/top/2.jpg) no-repeat;
   background-size: 256px 28px;
   background-position: -34px 6px;
 }
@@ -399,8 +396,7 @@ export default {
   top: 0;
   width: 35px;
   height: 100%;
-  background: url(//gw.alicdn.com/tfs/TB17oY3qbGYBuNjy0FoXXciBFXa-564-62.png_620x10000.jpg_.webp)
-    no-repeat;
+  background: url(/home/top/2.jpg) no-repeat;
   background-size: 256px 28px;
   background-position: -59px 3px;
 }
@@ -478,18 +474,15 @@ export default {
 }
 
 .home-sale {
-  background: url(//gw.alicdn.com/tfs/TB1pg6qwx9YBuNjy0FfXXXIsVXa-518-512.png?avatar=1_360x10000.jpg_.webp)
-    no-repeat;
+  background: url(/home/promontion/shell1.png) no-repeat;
   background-size: 100% 175%;
 }
 .home-goods {
-  background: url(//gw.alicdn.com/tfs/TB1Wy_6rYZnBKNjSZFrXXaRLFXa-345-257.png?getAvatar=1_360x10000.jpg_.webp)
-    no-repeat;
+  background: url(/home/promontion/shell2.png) no-repeat;
   background-size: 100% 100%;
 }
 .home-ju {
-  background: url(//gw.alicdn.com/tfs/TB1XWMYymzqK1RjSZFLXXcn2XXa-345-237.png?avatar=1_360x10000.jpg_.webp)
-    no-repeat;
+  background: url(/home/promontion/shell3.png) no-repeat;
   background-size: 100% 100%;
 }
 .home-promontion-title {
@@ -577,9 +570,7 @@ export default {
   box-sizing: border-box;
   grid-template-columns: 49.5% 49.5%;
   list-style-type: none;
-
-  background: url(//gw.alicdn.com/tfs/TB1Pq4.x9zqK1RjSZPcXXbTepXa-750-294.png_790x10000.jpg_.webp)
-    no-repeat;
+  background: url(/home/goods/shell.jpg) no-repeat;
   background-size: 100% 125px;
 }
 .home-bottom-goods > li {
@@ -589,7 +580,6 @@ export default {
   margin-top: 2.5px;
   margin-bottom: 2.5px;
   font-size: 11.9467px;
-
   border: 0.853333px solid rgb(237, 237, 237);
   background-color: white;
 }
@@ -641,7 +631,6 @@ export default {
 }
 .home-bottom-goods-btn {
   float: right;
-  /* display: inline-block; */
   background-color: rgb(255, 230, 235);
   width: 35%;
   border-radius: 10px;
