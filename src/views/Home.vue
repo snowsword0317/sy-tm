@@ -92,9 +92,9 @@
       <div class="home-promotion-small home-sale">
         <div class="home-promontion-title">限时抢购</div>
         <div class="home-time">
-          <span>00</span>:
-          <span>00</span>:
-          <span>00</span>
+          <span>{{hou}}</span>:
+          <span>{{min}}</span>:
+          <span>{{sec}}</span>
         </div>
         <div class="home-promontion-in-shell">
           <div class="home-promontion-in-one">
@@ -195,6 +195,7 @@
         </router-link>
       </li>
     </ul>
+    <img v-if="btnFlag" class="go-top" src="/home/top/1.jpg" @click="backTop" />
   </div>
 </template>
 
@@ -225,7 +226,12 @@ export default {
           clickable: true
         }
       },
-      onelist: onelist
+      onelist: onelist,
+      btnFlag: "",
+      hou: 0,
+      min: 0,
+      sec: 0,
+      // endTime: "",
     };
   },
   computed: {
@@ -236,8 +242,71 @@ export default {
       return this.$store.state.goodsList;
     }
   },
+  created() {
+    let that = this;
+    that.time();
+  },
   mounted() {
     this.swiper.slideTo(1, 1000, true);
+    window.addEventListener("scroll", this.scrollToTop);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.scrollToTop);
+  },
+
+  methods: {
+    // 点击图片回到顶部方法，加计时器是为了过渡顺滑
+    backTop() {
+      const that = this;
+      let timer = setInterval(() => {
+        let ispeed = Math.floor(-that.scrollTop / 5);
+        document.documentElement.scrollTop = document.body.scrollTop =
+          that.scrollTop + ispeed;
+        if (that.scrollTop === 0) {
+          clearInterval(timer);
+        }
+      }, 16);
+    },
+
+    // 为了计算距离顶部的高度，当高度大于60显示回顶部图标，小于60则隐藏
+    scrollToTop() {
+      const that = this;
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      that.scrollTop = scrollTop;
+      if (that.scrollTop > 100) {
+        that.btnFlag = true;
+      } else {
+        that.btnFlag = false;
+      }
+    },
+        time() {
+      var that = this;
+      var interval = setInterval(function timestampToTime() {
+        var date =
+          new Date(2020, 5, 5, 15, 30, 0, 999) - new Date().getTime();
+        //new Date当前的时间戳，也可以换成自定义的时间戳
+        if (date > 0) {
+          let time = date / 1000;
+          // 获取时、分、秒,毫秒
+          that.hou =
+            parseInt((time % (60 * 60 * 24)) / 3600) < 10
+              ? "0" + parseInt((time % (60 * 60 * 24)) / 3600)
+              : parseInt((time % (60 * 60 * 24)) / 3600);
+          that.min =
+            parseInt(((time % (60 * 60 * 24)) % 3600) / 60) < 10
+              ? "0" + parseInt(((time % (60 * 60 * 24)) % 3600) / 60)
+              : parseInt(((time % (60 * 60 * 24)) % 3600) / 60);
+          that.sec =
+            parseInt(((time % (60 * 60 * 24)) % 3600) % 60) < 10
+              ? "0" + parseInt(((time % (60 * 60 * 24)) % 3600) % 60)
+              : parseInt(((time % (60 * 60 * 24)) % 3600) % 60);
+        } else {
+        }
+      }, 1000);
+    }
   }
 };
 </script>
@@ -575,4 +644,11 @@ export default {
   height: 100%;
 }
 
+.go-top {
+  width: 37.5467px;
+  height: 37.5467px;
+  position: fixed;
+  top: 89%;
+  left: 87%;
+}
 </style>
