@@ -65,7 +65,7 @@ export default {
         this.tell == this.$store.state.tell &&
         this.tellPwd == this.$store.state.tellPwd
       ) {
-        this.$router.replace("/car");
+        this.$router.replace("/homelogin");
         this.$router.meta = 3;
         console.log(this.$router);
       }

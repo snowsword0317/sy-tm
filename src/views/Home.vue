@@ -230,8 +230,7 @@ export default {
       btnFlag: "",
       hou: 0,
       min: 0,
-      sec: 0,
-      // endTime: "",
+      sec: 0
     };
   },
   computed: {
@@ -282,11 +281,10 @@ export default {
         that.btnFlag = false;
       }
     },
-        time() {
+    time() {
       var that = this;
       var interval = setInterval(function timestampToTime() {
-        var date =
-          new Date(2020, 5, 5, 15, 30, 0, 999) - new Date().getTime();
+        var date = new Date(2020, 5, 5, 15, 30, 0, 999) - new Date().getTime();
         //new Date当前的时间戳，也可以换成自定义的时间戳
         if (date > 0) {
           let time = date / 1000;

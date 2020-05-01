@@ -14,7 +14,7 @@ export default new Vuex.Store({
   },
   mutations: {
     loadGoods(state){
-      console.log("xixixi");
+      // console.log("xixixi");
       for(let i=0;i<state.goodsList.length;i++){
         if(state.goodsList[i].isShow == false){
           state.goodsList[i].isShow = true;

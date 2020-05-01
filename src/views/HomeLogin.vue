@@ -4,7 +4,7 @@
       <div class="home-top-top-shell">
         <router-link to="/classify" class="top-classify"></router-link>
         <div class="top-logo"></div>
-        <router-link to="/login" class="top-login">登录</router-link>
+        <div class="top-login" @click="tab(1)"></div>
       </div>
       <router-link to="/search" class="top-search">
         <input type="text" placeholder="搜索商品，品牌" />
@@ -92,9 +92,9 @@
       <div class="home-promotion-small home-sale">
         <div class="home-promontion-title">限时抢购</div>
         <div class="home-time">
-          <span>00</span>:
-          <span>00</span>:
-          <span>00</span>
+          <span>{{hou}}</span>:
+          <span>{{min}}</span>:
+          <span>{{sec}}</span>
         </div>
         <div class="home-promontion-in-shell">
           <div class="home-promontion-in-one">
@@ -196,7 +196,9 @@
       </li>
     </ul>
     <img v-if="btnFlag" class="go-top" src="/home/top/1.jpg" @click="backTop" />
-
+    <div>
+      <component :is="tabname" v-if="showtab"></component>
+    </div>
   </div>
 </template>
 
@@ -204,11 +206,13 @@
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import { onelist } from "../components/home/onelist.js";
+import user from "../components/home/user.vue";
 
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    "user":user,
   },
   directives: {
     swiper: directive
@@ -228,7 +232,13 @@ export default {
         }
       },
       onelist: onelist,
-      btnFlag: ""
+      btnFlag: "",
+      hou: 0,
+      min: 0,
+      sec: 0,
+      tabname: "user",
+      pageindex: 1,
+      showtab:false
     };
   },
   computed: {
@@ -238,6 +248,10 @@ export default {
     goodsList() {
       return this.$store.state.goodsList;
     }
+  },
+  created() {
+    let that = this;
+    that.time();
   },
   mounted() {
     this.swiper.slideTo(1, 1000, true);
@@ -273,6 +287,37 @@ export default {
         that.btnFlag = true;
       } else {
         that.btnFlag = false;
+      }
+    },
+    time() {
+      var that = this;
+      var interval = setInterval(function timestampToTime() {
+        var date = new Date(2020, 5, 5, 15, 30, 0, 999) - new Date().getTime();
+        //new Date当前的时间戳，也可以换成自定义的时间戳
+        if (date > 0) {
+          let time = date / 1000;
+          // 获取时、分、秒,毫秒
+          that.hou =
+            parseInt((time % (60 * 60 * 24)) / 3600) < 10
+              ? "0" + parseInt((time % (60 * 60 * 24)) / 3600)
+              : parseInt((time % (60 * 60 * 24)) / 3600);
+          that.min =
+            parseInt(((time % (60 * 60 * 24)) % 3600) / 60) < 10
+              ? "0" + parseInt(((time % (60 * 60 * 24)) % 3600) / 60)
+              : parseInt(((time % (60 * 60 * 24)) % 3600) / 60);
+          that.sec =
+            parseInt(((time % (60 * 60 * 24)) % 3600) % 60) < 10
+              ? "0" + parseInt(((time % (60 * 60 * 24)) % 3600) % 60)
+              : parseInt(((time % (60 * 60 * 24)) % 3600) % 60);
+        } else {
+        }
+      }, 1000);
+    },
+    tab(index) {
+      this.pageindex = index;
+      if ((index = 1)) {
+        this.tabname = "user";
+        this.showtab=true
       }
     }
   }
@@ -324,13 +369,13 @@ export default {
 .top-login {
   vertical-align: top;
   float: right;
+  width: 8%;
   margin-right: 2%;
   height: 100%;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 12px;
-  text-align: center;
-  line-height: 38px;
+  background: url(//gw.alicdn.com/tfs/TB17oY3qbGYBuNjy0FoXXciBFXa-564-62.png_620x10000.jpg_.webp)
+    no-repeat;
+  background-size: 256px 28px;
+  background-position: -34px 6px;
 }
 
 .top-search {
@@ -611,5 +656,4 @@ export default {
   width: 100%;
   height: 100%;
 }
-
 </style>

@@ -48,7 +48,7 @@ export default {
         this.uname == this.$store.state.uname &&
         this.pwd == this.$store.state.pwd
       ) {
-        this.$router.replace("/car");
+        this.$router.replace("/homelogin");
         this.$router.meta = 3;
         console.log(this.$router);
       }

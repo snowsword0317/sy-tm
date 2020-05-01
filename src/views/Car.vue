@@ -134,7 +134,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      console.log(scrollTop)
+      // console.log(scrollTop)
       if(scrollTop>835){
         let that = this
        
@@ -182,7 +182,7 @@ export default {
       // console.log(event)
       if (event.target.checked) {
         this.carList[index].checked = true;
-        console.log(this.carList);
+        // console.log(this.carList);
       } else {
         this.carList[index].checked = false;
       }
