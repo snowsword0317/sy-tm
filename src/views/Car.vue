@@ -477,6 +477,7 @@ a {
   display: flex;
   border-top: 1px solid rgb(223, 220, 220);
   line-height: 48px;
+  z-index:999;
 }
 .foot-fix input {
   width: 20px;
