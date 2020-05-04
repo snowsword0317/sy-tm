@@ -337,7 +337,7 @@ export default {
           checked:false
         };
          this.$store.commit("pushCarList",goods)
-      if(this.$router.meta == 3){
+      if(this.$store.state.isLogin == true){
         this.$router.push("/car");
       }else{
         this.$router.push("/login");

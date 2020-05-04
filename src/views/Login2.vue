@@ -66,8 +66,7 @@ export default {
         this.tellPwd == this.$store.state.tellPwd
       ) {
         this.$router.replace("/homelogin");
-        this.$router.meta = 3;
-        console.log(this.$router);
+        this.$store.commit("login")
       }
     },
     close1() {

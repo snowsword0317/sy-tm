@@ -10,7 +10,8 @@ export default new Vuex.Store({
     uname:"hahaha",
     pwd:"123123",
     tell:13801987019,
-    tellPwd:456456
+    tellPwd:456456,
+    isLogin:false
   },
   mutations: {
     loadGoods(state){
@@ -43,6 +44,9 @@ export default new Vuex.Store({
     plus(state,index){
       state.carList[index].per++
     },
+    login(state){
+      state.isLogin = true
+    }
   },
   actions: {
   },
