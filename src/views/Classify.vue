@@ -212,6 +212,7 @@ export default {
 }
 .classify-shell {
   height: 100%;
+  overflow: hidden;
 }
 .classify-title {
   width: 100%;
@@ -224,7 +225,7 @@ export default {
 .classify-list {
   display: inline-block;
   width: 22%;
-  height: 93.5%;
+  height: 93%;
   overflow: auto;
   position: relative;
 }
@@ -244,7 +245,6 @@ export default {
   vertical-align: top;
   overflow: auto;
 }
-
 .active {
   display: block;
   color: #333;
